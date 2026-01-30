@@ -7,20 +7,13 @@ def home():
     contact = {
         "business_name": "Signal Ridge Systems LLC",
         "city": "Gillette, WY",
-        "email": "contact@signalridgesystems.com",   # <-- change
-        "phone_display": "(307) 228-0607",          # <-- change
-        "phone_e164": "+13072280607",               # <-- change (digits only)
+        "email": "contact@signalridgesystems.com",
+        "phone_display": "(307) 228-0607",
+        "phone_e164": "+13072280607",
         "hours": "Mon–Fri 9am–5pm (Mountain)",
-        "remote": "Remote support available",
+        "remote": "Remote options available",
     }
     return render_template("index.html", contact=contact)
-
-if __name__ == "__main__":
-    app.run(debug=True)
-    
-@app.route("/")
-def home():
-    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
