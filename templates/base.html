@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Signal Ridge Systems LLC{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="/" aria-label="Signal Ridge Systems home">
+        <img
+          class="brand-logo"
+          src="{{ url_for('static', filename='img/logo.png') }}"
+          alt="Signal Ridge Systems logo"
+        />
+        <div class="brand-text">
+          <div class="brand-name">Signal Ridge Systems LLC</div>
+          <div class="brand-tag">Basic computing for adults</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a class="btn secondary" href="#services">Services</a>
+        <a class="btn secondary" href="#about">About</a>
+        <a class="btn primary" href="#contact">Contact</a>
+        </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2026 Signal Ridge Systems LLC</div>
+      <div class="muted">Gillette, WY • Remote options available</div>
+    </div>
+  </footer>
+
+</body>
+</html>

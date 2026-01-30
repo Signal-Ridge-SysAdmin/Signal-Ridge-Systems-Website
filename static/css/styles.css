@@ -1,0 +1,217 @@
+/* =========================
+   Brand Variables
+   ========================= */
+:root {
+  --bg: #070f1a;
+  --bg2: #0b1a2a;
+
+  --text: #eaf2ff;
+  --muted: rgba(234, 242, 255, 0.72);
+
+  --accent: #39c6ff;
+  --accent2: #34e7d1;
+
+  --line: rgba(255,255,255,0.10);
+  --panel: rgba(255,255,255,0.04);
+  --shadow: rgba(57, 198, 255, 0.18);
+}
+
+/* =========================
+   Base Reset
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+
+  background:
+    radial-gradient(1200px 700px at 18% -10%, rgba(57, 198, 255, 0.18), transparent 60%),
+    radial-gradient(900px 600px at 92% 12%, rgba(52, 231, 209, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+/* =========================
+   Layout
+   ========================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* =========================
+   Header
+   ========================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(7, 15, 26, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap; /* critical for mobile */
+  padding: 0.75rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  flex: 1 1 auto;
+  min-width: 260px;
+}
+
+.brand-logo {
+  height: 4.5rem; /* responsive, not px-locked */
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  filter:
+    drop-shadow(0 8px 20px rgba(0,0,0,0.35))
+    drop-shadow(0 0 12px rgba(57, 198, 255, 0.25));
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.brand-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+}
+
+.brand-tag {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+/* =========================
+   Hero
+   ========================= */
+.hero {
+  padding: 4rem 0;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p,
+.lead {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+/* =========================
+   Buttons & Nav
+   ========================= */
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.25);
+}
+
+.nav-link:hover {
+  text-decoration-color: rgba(57, 198, 255, 0.55);
+}
+
+.btn {
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid var(--line);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #07101a;
+  box-shadow: 0 12px 28px var(--shadow);
+  font-weight: 650;
+}
+.btn.primary:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(57, 198, 255, 0.35);
+}
+
+.btn.secondary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #07101a;
+  box-shadow: 0 12px 28px var(--shadow);
+  font-weight: 650;
+}
+
+.btn.secondary:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(57, 198, 255, 0.35);
+}
+
+/* =========================
+   Panels / Sections
+   ========================= */
+.section {
+  margin-top: 3rem;
+}
+
+.section.alt {
+  border-top: 1px solid var(--line);
+  padding-top: 2rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
