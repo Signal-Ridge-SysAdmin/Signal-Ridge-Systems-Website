@@ -522,12 +522,15 @@ main.container {
 /* =========================
    Home: Featured Founder row
    ========================= */
-.card.founder-copy { grid-column: span 12; }
+.card.founder-copy {
+  grid-column: span 12;
+}
+
 .card.founder-photo {
   grid-column: span 12;
-  padding: 0;
-  overflow: hidden;
+  padding: 1rem;            /* gives breathing room */
   position: relative;
+  text-align: center;       /* centers the image visually */
 }
 
 @media (min-width: 900px) {
@@ -535,26 +538,36 @@ main.container {
   .card.founder-photo { grid-column: span 4; }
 }
 
+/* Scale the image down instead of cropping it */
 .founder-photo .portrait {
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  max-width: 420px;         /* THIS is the key control */
+  height: auto;
+
+  margin: 0 auto;           /* horizontal centering */
+  border-radius: 12px;      /* softer than full card radius */
 }
 
+/* Overlay + caption still work, but only if you want them */
 .portrait-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(17,24,39,0.10), rgba(17,24,39,0.70));
+  inset: 1rem;              /* match padding */
+  background: linear-gradient(
+    180deg,
+    rgba(17,24,39,0.00),
+    rgba(17,24,39,0.55)
+  );
   pointer-events: none;
+  border-radius: 12px;
 }
 
 .portrait-caption {
   position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  bottom: 1.5rem;
+  text-align: left;
 }
 
 .portrait-name {
