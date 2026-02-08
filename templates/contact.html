@@ -11,11 +11,46 @@
 </section>
 
 <section class="contact-grid">
-  <!-- Left: Form -->
-  <div class="panel">
+  <!-- Mobile-first: Quick Info first -->
+  <aside class="panel contact-panel subtle contact-info">
+    <h2 class="h3">Quick info</h2>
+
+    <ul class="list">
+      <li><strong>Location:</strong> Gillette, Wyoming (and nearby Campbell County)</li>
+      <li><strong>Meeting options:</strong> in-person (public location) or remote session</li>
+      <li><strong>Response time:</strong> usually within 1 business day</li>
+    </ul>
+
+    <hr class="rule" />
+
+    <h3 class="h4">What to include</h3>
+    <ul class="list">
+      <li>Device type (Windows/Mac/iPhone/Android)</li>
+      <li>What you expected to happen vs. what happened</li>
+      <li>Any error message (copy/paste is fine)</li>
+      <li>If this feels urgent (security, money, locked accounts)</li>
+    </ul>
+
+    <hr class="rule" />
+
+    <h3 class="h4">Prefer email or phone?</h3>
+    <p class="contact-lines">
+      <strong>Email:</strong>
+      <a href="mailto:info@signalridgesystems.dev">info@signalridgesystems.dev</a><br />
+      <strong>Phone:</strong>
+      <a href="tel:+13072280607">(307) 228-0607</a>
+    </p>
+
+    <p class="muted small">
+      If this is a suspected scam or account compromise, say so in the message — we’ll prioritize it.
+    </p>
+  </aside>
+
+  <!-- Form -->
+  <div class="panel contact-panel contact-form">
     <h2 class="h3">Send a message</h2>
 
-    <form class="form" method="post" action="/contact">
+    <form method="post" action="{{ url_for('contact') }}">
       <div class="form-row">
         <label for="name">Your name</label>
         <input id="name" name="name" type="text" autocomplete="name" required />
@@ -24,6 +59,12 @@
       <div class="form-row">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
+
+      <!-- Honeypot (bots fill; humans never see) -->
+      <div class="hp">
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
       </div>
 
       <div class="form-row">
@@ -65,40 +106,5 @@
       </div>
     </form>
   </div>
-
-  <!-- Right: Info -->
-  <aside class="panel panel-subtle">
-    <h2 class="h3">Quick info</h2>
-
-    <ul class="list">
-      <li><strong>Location:</strong> Gillette, Wyoming (and nearby Campbell County)</li>
-      <li><strong>Meeting options:</strong> in-person (public location) or remote session</li>
-      <li><strong>Response time:</strong> usually within 1 business day</li>
-    </ul>
-
-    <hr class="rule" />
-
-    <h3 class="h4">What to include</h3>
-    <ul class="list">
-      <li>Device type (Windows/Mac/iPhone/Android)</li>
-      <li>What you expected to happen vs. what happened</li>
-      <li>Any error message (copy/paste is fine)</li>
-      <li>If this feels urgent (security, money, locked accounts)</li>
-    </ul>
-
-    <hr class="rule" />
-
-    <h3 class="h4">Prefer email or phone?</h3>
-    <p class="contact-lines">
-      <strong>Email:</strong>
-      <a href="mailto:william.zade@signalridgesystems.dev">william.zade@signalridgesystems.dev</a><br />
-      <strong>Phone:</strong>
-      <a href="tel:+13072280607">(307) 228-0607</a>
-    </p>
-
-    <p class="muted small">
-      If this is a suspected scam or account compromise, say so in the message — we’ll prioritize it.
-    </p>
-  </aside>
 </section>
 {% endblock %}

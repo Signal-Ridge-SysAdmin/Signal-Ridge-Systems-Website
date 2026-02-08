@@ -19,7 +19,6 @@
 
   /* Lines / surfaces */
   --line: rgba(245,241,232,0.12);
-  --panel: rgba(245,241,232,0.05);
 
   /* Shadows */
   --shadow-base: rgba(0,0,0,0.28);
@@ -41,7 +40,6 @@ body {
   color: var(--text);
   line-height: 1.6;
 
-  /* Background image */
   background-image: url("/static/img/sepia-college-bridge.png");
   background-size: cover;
   background-position: center 40%;
@@ -74,6 +72,16 @@ main.container {
   min-height: calc(100vh - 160px); /* header+footer buffer */
 }
 
+/* =========================
+   Typography Helpers
+   ========================= */
+.muted { color: var(--muted); }
+
+.lead {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
 .page-title{
   text-shadow: 0 2px 16px rgba(0,0,0,0.55);
 }
@@ -99,7 +107,7 @@ main.container {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  flex-wrap: wrap; /* critical for mobile */
+  flex-wrap: wrap;
   padding: 0.75rem 0;
 }
 
@@ -153,7 +161,6 @@ main.container {
   flex-wrap: wrap;
 }
 
-/* Top Nav Buttons (ALL ORANGE) */
 .nav {
   display: flex;
   gap: 0.75rem;
@@ -176,7 +183,6 @@ main.container {
   color: #0B1220;
   background: linear-gradient(135deg, var(--orange-500), var(--orange-600));
   border: 1px solid rgba(245,241,232,0.16);
-
   box-shadow: 0 12px 28px rgba(249,115,22,0.22);
 
   transition:
@@ -190,7 +196,6 @@ main.container {
   transform: translateY(-1px);
   filter: brightness(1.03);
   border-color: rgba(20,184,166,0.45);
-
   box-shadow:
     0 12px 28px rgba(249,115,22,0.22),
     0 12px 28px rgba(20,184,166,0.22);
@@ -210,7 +215,6 @@ main.container {
     0 12px 28px rgba(20,184,166,0.22);
 }
 
-/* In-page CTAs */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -223,7 +227,11 @@ main.container {
   text-decoration: none;
   border: 1px solid var(--line);
 
-  transition: transform 140ms ease, filter 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+  transition:
+    transform 140ms ease,
+    filter 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
 }
 
 .btn.primary {
@@ -267,16 +275,8 @@ main.container {
 }
 
 /* =========================
-   Panels / Sections
+   Panels (single source of truth)
    ========================= */
-.section { margin-top: 3rem; }
-
-.section.alt {
-  border-top: 1px solid var(--line);
-  padding-top: 2rem;
-}
-
-/* GLOBAL panel (single source of truth) */
 .panel {
   position: relative;
   background: linear-gradient(180deg, rgba(31,41,51,0.88), rgba(17,24,39,0.88));
@@ -343,18 +343,14 @@ main.container {
   flex-wrap: wrap;
 }
 
-.muted { color: var(--muted); }
-
 /* =========================
-   Page Layout + Legibility
+   Page Layout Blocks
    ========================= */
 .page {
   padding: 2.25rem 0 3rem;
 }
 
-.page-header {
-  margin-bottom: 1.5rem;
-}
+.page-header { margin-bottom: 1.5rem; }
 
 .page-title {
   margin: 0 0 0.5rem;
@@ -369,13 +365,6 @@ main.container {
   color: var(--muted);
 }
 
-/* General lead (used by hero + contact head) */
-.lead {
-  max-width: 60ch;
-  color: var(--muted);
-}
-
-/* Optional surface wrapper (services/about pages can use this) */
 .page-surface {
   background: rgba(17,24,39,0.82);
   border: 1px solid rgba(245,241,232,0.12);
@@ -386,7 +375,7 @@ main.container {
 }
 
 /* =========================
-   Services page helpers
+   Services Helpers + Card Grid
    ========================= */
 .subhead{
   margin: 1.0rem 0 0.35rem;
@@ -421,9 +410,7 @@ main.container {
   margin-left: 0.25rem;
 }
 
-/* =========================
-   Card Grid
-   ========================= */
+/* Card grid */
 .card-grid{
   display: grid;
   grid-template-columns: 1fr;
@@ -447,9 +434,7 @@ main.container {
   flex-direction: column;
 }
 
-.panel.card .meta{
-  margin-top: auto;
-}
+.panel.card .meta{ margin-top: auto; }
 
 .panel h3{
   font-size: 1.35rem;
@@ -467,22 +452,12 @@ main.container {
   padding-left: 1.1rem;
 }
 
-.panel li{
-  margin: 0.28rem 0;
-}
+.panel li{ margin: 0.28rem 0; }
 
 /* =========================
    Home Hero (split layout)
    ========================= */
-.hero {
-  padding: 3.25rem 0 2rem;
-}
-
-.hero h1,
-.hero h2 {
-  font-size: 2.4rem;
-  margin-bottom: 0.5rem;
-}
+.hero { padding: 3.25rem 0 2rem; }
 
 .hero h1 {
   margin: 0 0 0.75rem;
@@ -548,7 +523,12 @@ main.container {
    Home: Featured Founder row
    ========================= */
 .card.founder-copy { grid-column: span 12; }
-.card.founder-photo { grid-column: span 12; padding: 0; overflow: hidden; position: relative; }
+.card.founder-photo {
+  grid-column: span 12;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
 
 @media (min-width: 900px) {
   .card.founder-copy  { grid-column: span 8; }
@@ -588,11 +568,9 @@ main.container {
 }
 
 /* =========================
-   Contact Page (NO global overrides)
+   Contact Page (scoped)
    ========================= */
-.page-head {
-  padding: 1.5rem 0 1rem;
-}
+.page-head { padding: 1.5rem 0 1rem; }
 
 .page-head .lead {
   max-width: 70ch;
@@ -603,30 +581,36 @@ main.container {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr;
   gap: 1.25rem;
   padding: 0.5rem 0 2rem;
+
+  grid-template-areas:
+    "info"
+    "form";
 }
 
-@media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; }
+.contact-info { grid-area: info; }
+.contact-form { grid-area: form; }
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-areas: "form info";
+  }
 }
 
-/* Apply tweaks ONLY when you add class="panel contact-panel" */
-.contact-panel {
-  padding: 1.35rem;
-}
+/* Only applied when you use class="panel contact-panel ..." */
+.contact-panel { padding: 1.35rem; }
 
 .contact-panel.subtle {
   background: linear-gradient(180deg, rgba(31,41,51,0.78), rgba(17,24,39,0.82));
 }
 
-/* Type helpers scoped to contact to avoid collisions */
 .contact-grid .h3 { font-size: 1.15rem; margin: 0 0 0.75rem; }
 .contact-grid .h4 { font-size: 1.02rem; margin: 0 0 0.5rem; }
 .small { font-size: 0.92rem; }
 
-/* Form */
 .form {
   display: grid;
   gap: 0.9rem;
@@ -638,9 +622,7 @@ main.container {
   gap: 0.35rem;
 }
 
-.form-row label {
-  font-weight: 700;
-}
+.form-row label { font-weight: 700; }
 
 .form-row input,
 .form-row select,
@@ -667,7 +649,6 @@ main.container {
   margin-top: 0.25rem;
 }
 
-/* Lists + separators */
 .list {
   margin: 0.6rem 0 0;
   padding-left: 1.1rem;
@@ -687,6 +668,7 @@ main.container {
   text-decoration: none;
 }
 
-.contact-lines a:hover {
-  text-decoration: underline;
-}
+.contact-lines a:hover { text-decoration: underline; }
+
+/* Honeypot field (hidden) */
+.hp { position: absolute; left: -9999px; top: -9999px; }
