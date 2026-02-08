@@ -3,81 +3,147 @@
 
 {% block content %}
 
-<!-- HERO -->
+<!-- =====================
+     Hero / Who We Are
+     ===================== -->
 <section class="hero">
   <div class="hero-grid">
 
-    <!-- Left: copy -->
+    <!-- Left: Company -->
     <div class="hero-surface">
-      <h1>Friendly, practical help for everyday technology — without judgment or jargon.</h1>
+      <h1>Practical technology help for real life.</h1>
 
       <p class="lead">
-        Signal Ridge Systems provides basic computing instruction for adults in Gillette, WY —
-        with a focus on independence, confidence, and online safety.
+        Signal Ridge Systems helps adults build confidence with everyday technology —
+        computers, phones, email, online safety, and the tools people now rely on to work,
+        communicate, and manage their lives.
+      </p>
+
+      <p class="lead">
+        This isn’t about “keeping up.” It’s about understanding what you’re using,
+        making informed choices, and not feeling embarrassed for asking questions.
       </p>
 
       <div class="actions">
-        <a class="btn primary" href="/services">View services</a>
-        <a class="btn secondary" href="/contact">Contact</a>
+        <a class="btn primary" href="{{ url_for('services') }}">View services</a>
+        <a class="btn secondary" href="{{ url_for('contact') }}">Get in touch</a>
       </div>
     </div>
 
-    <!-- Right: portrait -->
-    <div class="panel hero-media">
+    <!-- Right: Visual -->
+    <div class="hero-media">
       <img
-        src="{{ url_for('static', filename='img/sepia-portrait.png') }}"
-        alt="Portrait of William Zade, founder of Signal Ridge Systems"
-        class="portrait"
-        loading="lazy"
+        src="{{ url_for('static', filename='img/SRS-desk.png') }}"
+        alt="Historic bridge in Gillette, Wyoming"
       />
-      <div class="portrait-caption">
-        <div class="portrait-name">William Zade</div>
-        <div class="portrait-sub">Founder • Signal Ridge Systems</div>
-      </div>
+      <div class="hero-media-overlay"></div>
     </div>
 
   </div>
 </section>
 
-<!-- INFO CARDS -->
+<!-- =====================
+     What We Do / Mission
+     ===================== -->
 <section class="section">
   <div class="card-grid">
 
-    <div class="panel card third">
+    <div class="panel card">
       <h3>What we do</h3>
-      <p class="kicker">Workshops and programs for real-world competence.</p>
+      <p class="kicker">
+        Clear, judgment-free help with everyday technology
+      </p>
+
       <ul>
-        <li>Public-access computer basics</li>
-        <li>Email, documents, and online forms</li>
-        <li>Job search and workforce readiness</li>
-        <li>Cyber safety for everyday people</li>
+        <li>One-on-one computer and phone help</li>
+        <li>Email, accounts, and password management</li>
+        <li>Online safety, scams, and account recovery</li>
+        <li>Small group and community workshops</li>
       </ul>
     </div>
 
-    <div class="panel card third">
-      <h3>Mission</h3>
-      <p class="kicker">Independence through competence.</p>
-      <p class="small">
-        We teach patterns, not just steps — so people can solve problems on their own,
-        avoid scams, and confidently use the tools modern life requires.
+    <div class="panel card">
+      <h3>How we work</h3>
+      <p class="kicker">
+        Calm, practical, and focused on independence
       </p>
-      <p class="small">
-        No shame. No jargon. Just practical skill-building.
+
+      <ul>
+        <li>Plain language — no jargon</li>
+        <li>Hands-on learning, not lectures</li>
+        <li>Real-world examples using your own devices</li>
+        <li>Respect for your time, pace, and goals</li>
+      </ul>
+    </div>
+
+    <div class="panel card full">
+      <h3>Why this matters</h3>
+      <p class="kicker">
+        Technology shouldn’t be a source of stress or shame
+      </p>
+
+      <p>
+        Many people were never given a solid foundation with computers and digital tools.
+        Others learned just enough to get by — until something breaks, changes, or goes wrong.
+      </p>
+
+      <p>
+        Signal Ridge Systems exists to close that gap. Not by overwhelming people with
+        features, but by teaching the parts that actually matter and explaining
+        <em>why</em> things work the way they do.
       </p>
     </div>
 
-    <!-- Founder copy (wide) -->
+  </div>
+</section>
+
+<!-- =====================
+     Founder Section
+     ===================== -->
+<section class="section alt">
+  <div class="card-grid">
+
+    <!-- Copy -->
     <div class="panel card founder-copy">
-      <h3>Founder</h3>
-      <p class="kicker">William Zade</p>
-      <p class="small">
-        Veteran-led instruction focused on patience, clarity, and outcomes.
-        Training is built for adults who may be starting from zero — and need results fast.
+      <h3>About the founder</h3>
+
+      <p>
+        Signal Ridge Systems was founded by William Zade, a technologist, veteran,
+        and long-time community advocate.
       </p>
 
-      <div class="meta">
-        <div class="small">Gillette, WY • Remote options available</div>
-        <a class="btn primary" href="/about">Read more</a>
+      <p>
+        William has spent years working in IT, systems administration, and user support,
+        helping people solve real problems — not just technical ones, but the confusion
+        and frustration that often come with them.
+      </p>
+
+      <p>
+        As a veteran and a family man, he understands the value of patience, clarity,
+        and meeting people where they are. Signal Ridge Systems reflects those values
+        in every session and workshop.
+      </p>
+
+      <p class="muted">
+        Service. Responsibility. Community.
+      </p>
+
+      <p class="muted small">
+        Sua Sponte.
+      </p>
+    </div>
+
+    <!-- Photo -->
+    <div class="panel card founder-photo">
+      <img
+        class="portrait"
+        src="{{ url_for('static', filename='img/sepia-portrait.png') }}"
+        alt="Founder portrait"
+      />
+      <div class="portrait-overlay"></div>
+      <div class="portrait-caption">
+        <div class="portrait-name">William Zade</div>
+        <div class="portrait-sub">Founder, Signal Ridge Systems LLC</div>
       </div>
     </div>
 

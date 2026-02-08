@@ -23,7 +23,7 @@
         />
         <div class="brand-text">
           <div class="brand-name">Signal Ridge Systems LLC</div>
-          <div class="brand-tag">Basic computing for adults</div>
+          <div class="brand-tag">Everyday Tech Done Simply</div>
         </div>
       </a>
 
@@ -43,8 +43,22 @@
   </header>
 
   <main class="container">
-    {% block content %}{% endblock %}
-  </main>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-stack">
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  {% block content %}{% endblock %}
+</main>
+
 
   <footer class="site-footer">
     <div class="container footer-inner">
