@@ -2,102 +2,103 @@
 {% block title %}Contact | Signal Ridge Systems LLC{% endblock %}
 
 {% block content %}
-<section class="page">
-  <div class="container">
+<section class="page-head">
+  <h1>Contact</h1>
+  <p class="lead">
+    Tell me what you’re trying to do, what’s getting in the way, and how you’d like to meet.
+    No judgment. No jargon.
+  </p>
+</section>
 
-    <header class="page-head">
-      <h1>Contact</h1>
-      <p class="lead">
-        Tell me what you’re trying to do, what’s getting in the way, and how you’d like to meet.
-        No judgment. No jargon.
-      </p>
-    </header>
+<section class="contact-grid">
+  <!-- Left: Form -->
+  <div class="panel">
+    <h2 class="h3">Send a message</h2>
 
-    <div class="contact-grid">
-
-      <!-- Left: Form -->
-      <div class="card">
-        <h2>Send a message</h2>
-
-        <form class="form" method="post" action="/contact">
-          <div class="form-row">
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required>
-          </div>
-
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-
-          <div class="form-row">
-            <label for="phone">Phone (optional)</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel">
-          </div>
-
-          <div class="form-row">
-            <label for="topic">What do you need help with?</label>
-            <select id="topic" name="topic" required>
-              <option value="" selected disabled>Select one…</option>
-              <option>Basic computer help</option>
-              <option>Phone / tablet help</option>
-              <option>Email & accounts</option>
-              <option>Online safety / scams</option>
-              <option>Setting up a new device</option>
-              <option>One-day workshop (group)</option>
-              <option>Multi-day workshop (group)</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required
-              placeholder="Example: “I can’t log into my email and I’m worried it’s been hacked. I use an iPhone. I’m available afternoons.”"></textarea>
-          </div>
-
-          <button class="btn primary" type="submit">Send</button>
-
-          <p class="fineprint">
-            By sending this message you’re only requesting contact — no commitment and no pressure.
-          </p>
-        </form>
+    <form class="form" method="post" action="/contact">
+      <div class="form-row">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
       </div>
 
-      <!-- Right: Info -->
-      <aside class="card subtle">
-        <h2>Helpful details</h2>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+      </div>
 
-        <ul class="bullets">
-          <li><strong>Location:</strong> Gillette, Wyoming (and nearby Campbell County)</li>
-          <li><strong>Meeting options:</strong> in-person (public location), or remote session</li>
-          <li><strong>Response time:</strong> usually within 1 business day</li>
-        </ul>
+      <div class="form-row">
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" />
+      </div>
 
-        <div class="divider"></div>
+      <div class="form-row">
+        <label for="topic">What do you need help with?</label>
+        <select id="topic" name="topic" required>
+          <option value="" selected disabled>Select one…</option>
+          <option>Basic computer help</option>
+          <option>Phone / tablet help</option>
+          <option>Email & accounts</option>
+          <option>Online safety / scams</option>
+          <option>Setting up a new device</option>
+          <option>One-day workshop (group)</option>
+          <option>Multi-day workshop (group)</option>
+          <option>Other</option>
+        </select>
+      </div>
 
-        <h3>What to include</h3>
-        <ul class="bullets">
-          <li>Device type (Windows/Mac/iPhone/Android)</li>
-          <li>What you expected to happen vs what happened</li>
-          <li>Any error message (copy/paste is fine)</li>
-          <li>Whether this feels urgent (security, money, locked accounts)</li>
-        </ul>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          placeholder="Example: “I can’t log into my email and I’m worried it’s been hacked. I use an iPhone. I’m available afternoons.”"
+        ></textarea>
+      </div>
 
-        <div class="divider"></div>
-
-        <h3>Prefer email or phone?</h3>
-        <p class="contact-lines">
-          <strong>Email:</strong> <a href="mailto:william.zade@signalridgesystems.dev">william.zade@signalridgesystems.dev</a><br>
-          <strong>Phone:</strong> <a href="tel:+13072280607">(307) 228-0607</a>
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Send</button>
+        <p class="muted small">
+          By sending this message you’re only requesting contact — no commitment and no pressure.
         </p>
-
-        <p class="fineprint">
-          If this is a suspected scam or account compromise, say so in the message — we’ll prioritize it.
-        </p>
-      </aside>
-
-    </div>
+      </div>
+    </form>
   </div>
+
+  <!-- Right: Info -->
+  <aside class="panel panel-subtle">
+    <h2 class="h3">Quick info</h2>
+
+    <ul class="list">
+      <li><strong>Location:</strong> Gillette, Wyoming (and nearby Campbell County)</li>
+      <li><strong>Meeting options:</strong> in-person (public location) or remote session</li>
+      <li><strong>Response time:</strong> usually within 1 business day</li>
+    </ul>
+
+    <hr class="rule" />
+
+    <h3 class="h4">What to include</h3>
+    <ul class="list">
+      <li>Device type (Windows/Mac/iPhone/Android)</li>
+      <li>What you expected to happen vs. what happened</li>
+      <li>Any error message (copy/paste is fine)</li>
+      <li>If this feels urgent (security, money, locked accounts)</li>
+    </ul>
+
+    <hr class="rule" />
+
+    <h3 class="h4">Prefer email or phone?</h3>
+    <p class="contact-lines">
+      <strong>Email:</strong>
+      <a href="mailto:william.zade@signalridgesystems.dev">william.zade@signalridgesystems.dev</a><br />
+      <strong>Phone:</strong>
+      <a href="tel:+13072280607">(307) 228-0607</a>
+    </p>
+
+    <p class="muted small">
+      If this is a suspected scam or account compromise, say so in the message — we’ll prioritize it.
+    </p>
+  </aside>
 </section>
 {% endblock %}

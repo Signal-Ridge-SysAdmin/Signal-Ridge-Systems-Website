@@ -68,9 +68,16 @@ body::before{
   padding: 1.5rem;
 }
 
+main.container {
+  padding-top: 2rem;
+  padding-bottom: 3.5rem;
+  min-height: calc(100vh - 160px); /* header+footer buffer */
+}
+
 .page-title{
   text-shadow: 0 2px 16px rgba(0,0,0,0.55);
 }
+
 .page-lead{
   text-shadow: 0 2px 14px rgba(0,0,0,0.50);
 }
@@ -137,159 +144,6 @@ body::before{
 }
 
 /* =========================
-   Hero
-   ========================= */
-.hero { padding: 4rem 0; }
-
-.hero h1,
-.hero h2 {
-  font-size: 2.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p,
-.lead {
-  max-width: 60ch;
-  color: var(--muted);
-}
-
-/* =========================
-   Home Hero
-   ========================= */
-.hero {
-  padding: 3.25rem 0 2rem;
-}
-
-.hero-surface {
-  max-width: 78ch;
-  background: rgba(17,24,39,0.78);
-  border: 1px solid rgba(245,241,232,0.12);
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
-  backdrop-filter: blur(8px);
-}
-
-.hero h1 {
-  margin: 0 0 0.75rem;
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  line-height: 1.12;
-}
-
-.hero .lead {
-  margin: 0;
-  color: var(--muted);
-  max-width: 70ch;
-}
-
-/* =========================
-   Home Hero: split layout
-   ========================= */
-.hero {
-  padding: 3.25rem 0 2rem;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.25rem;
-  align-items: stretch;
-}
-
-/* Left hero content */
-.hero-surface {
-  grid-column: span 12;
-  max-width: none;
-
-  background: rgba(17,24,39,0.78);
-  border: 1px solid rgba(245,241,232,0.12);
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.35);
-  backdrop-filter: blur(8px);
-}
-
-/* Right hero image panel */
-.hero-media {
-  grid-column: span 12;
-  padding: 0;
-  overflow: hidden;
-  min-height: 260px;
-}
-
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transform: scale(1.01);
-}
-
-.hero-media-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(700px 320px at 30% 20%, rgba(20,184,166,0.12), transparent 60%),
-    linear-gradient(180deg, rgba(17,24,39,0.10), rgba(17,24,39,0.55));
-  pointer-events: none;
-}
-
-/* Make .hero-media able to position overlay */
-.hero-media {
-  position: relative;
-}
-
-/* Desktop: 2-column hero */
-@media (min-width: 900px) {
-  .hero-surface { grid-column: span 7; }
-  .hero-media   { grid-column: span 5; }
-}
-
-/* =========================
-   Home: featured Founder row
-   ========================= */
-.card.founder-copy { grid-column: span 12; }
-.card.founder-photo { grid-column: span 12; padding: 0; overflow: hidden; position: relative; }
-
-@media (min-width: 900px) {
-  .card.founder-copy  { grid-column: span 8; }
-  .card.founder-photo { grid-column: span 4; }
-}
-
-.founder-photo .portrait {
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
-  object-fit: cover;
-  display: block;
-}
-
-.portrait-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(17,24,39,0.10), rgba(17,24,39,0.70));
-  pointer-events: none;
-}
-
-.portrait-caption {
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-}
-
-.portrait-name {
-  font-weight: 900;
-  letter-spacing: 0.2px;
-}
-
-.portrait-sub {
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-/* =========================
    Buttons & Nav
    ========================= */
 .actions {
@@ -299,9 +153,7 @@ body::before{
   flex-wrap: wrap;
 }
 
-/* -------------------------
-   Top Nav Buttons (ALL ORANGE)
-   ------------------------- */
+/* Top Nav Buttons (ALL ORANGE) */
 .nav {
   display: flex;
   gap: 0.75rem;
@@ -309,7 +161,6 @@ body::before{
   align-items: center;
 }
 
-/* Every nav item is the same: orange, teal glow on hover */
 .nav-link {
   display: inline-flex;
   align-items: center;
@@ -345,14 +196,12 @@ body::before{
     0 12px 28px rgba(20,184,166,0.22);
 }
 
-/* Active: subtle pressed-outline without changing base color */
 .nav-link.active {
   box-shadow:
     inset 0 0 0 2px rgba(245,241,232,0.18),
     0 12px 28px rgba(249,115,22,0.22);
 }
 
-/* Keyboard focus */
 .nav-link:focus-visible {
   outline: none;
   box-shadow:
@@ -361,9 +210,7 @@ body::before{
     0 12px 28px rgba(20,184,166,0.22);
 }
 
-/* -------------------------
-   General Buttons (in-page CTAs)
-   ------------------------- */
+/* In-page CTAs */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -375,6 +222,8 @@ body::before{
 
   text-decoration: none;
   border: 1px solid var(--line);
+
+  transition: transform 140ms ease, filter 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
 }
 
 .btn.primary {
@@ -403,10 +252,8 @@ body::before{
   box-shadow: 0 12px 28px rgba(20,184,166,0.20);
 }
 
-/* Shared button hover lift */
 .btn:hover { transform: translateY(-1px); }
 
-/* Focus */
 .btn:focus-visible {
   outline: none;
   box-shadow:
@@ -414,7 +261,6 @@ body::before{
     0 12px 28px rgba(20,184,166,0.16);
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .nav-link, .btn { transition: none; }
   .nav-link:hover, .btn:hover { transform: none; }
@@ -430,6 +276,7 @@ body::before{
   padding-top: 2rem;
 }
 
+/* GLOBAL panel (single source of truth) */
 .panel {
   position: relative;
   background: linear-gradient(180deg, rgba(31,41,51,0.88), rgba(17,24,39,0.88));
@@ -460,7 +307,6 @@ body::before{
     linear-gradient(180deg, rgba(31,41,51,0.85), rgba(17,24,39,0.85));
 }
 
-/* Optional clean teal ring */
 .panel::after{
   content:"";
   position:absolute;
@@ -506,12 +352,6 @@ body::before{
   padding: 2.25rem 0 3rem;
 }
 
-main.container {
-  padding-top: 2rem;
-  padding-bottom: 3.5rem;
-  min-height: calc(100vh - 160px); /* header+footer buffer */
-}
-
 .page-header {
   margin-bottom: 1.5rem;
 }
@@ -529,6 +369,13 @@ main.container {
   color: var(--muted);
 }
 
+/* General lead (used by hero + contact head) */
+.lead {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+/* Optional surface wrapper (services/about pages can use this) */
 .page-surface {
   background: rgba(17,24,39,0.82);
   border: 1px solid rgba(245,241,232,0.12);
@@ -538,10 +385,13 @@ main.container {
   backdrop-filter: blur(8px);
 }
 
-/* Services page helpers */
+/* =========================
+   Services page helpers
+   ========================= */
 .subhead{
-  margin: 1.1rem 0 0.35rem;
+  margin: 1.0rem 0 0.35rem;
   font-size: 1.02rem;
+  font-weight: 750;
   letter-spacing: 0.2px;
   color: var(--text);
 }
@@ -564,7 +414,6 @@ main.container {
   white-space: nowrap;
 }
 
-
 .price-note{
   font-size: 0.95rem;
   font-weight: 650;
@@ -582,27 +431,24 @@ main.container {
   margin-top: 1.5rem;
 }
 
-/* Desktop/tablet: 2 columns */
 @media (min-width: 860px){
   .card-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
   }
 
-  /* Explicit spans */
-  .card.half{ grid-column: span 1; }
-  .card.third{ grid-column: span 1; } /* still 1/2 width (good) */
-  .card.full{ grid-column: span 2; }
+  .card.half  { grid-column: span 1; }
+  .card.third { grid-column: span 1; }
+  .card.full  { grid-column: span 2; }
 }
 
-/* Make cards consistent height and keep the meta row at the bottom */
 .panel.card{
   display: flex;
   flex-direction: column;
 }
 
 .panel.card .meta{
-  margin-top: auto;  /* pushes pricing + button to bottom */
+  margin-top: auto;
 }
 
 .panel h3{
@@ -625,18 +471,28 @@ main.container {
   margin: 0.28rem 0;
 }
 
-.subhead{
-  margin: 1.0rem 0 0.35rem;
-  font-size: 1.02rem;
-  font-weight: 750;
-  letter-spacing: 0.2px;
-}
-
 /* =========================
-   Home Hero: split layout
+   Home Hero (split layout)
    ========================= */
 .hero {
   padding: 3.25rem 0 2rem;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.12;
+}
+
+.hero .lead {
+  margin: 0;
+  max-width: 70ch;
 }
 
 .hero-grid {
@@ -646,7 +502,6 @@ main.container {
   align-items: stretch;
 }
 
-/* Left hero content */
 .hero-surface {
   grid-column: span 12;
   max-width: none;
@@ -659,12 +514,12 @@ main.container {
   backdrop-filter: blur(8px);
 }
 
-/* Right hero image panel */
 .hero-media {
   grid-column: span 12;
   padding: 0;
   overflow: hidden;
   min-height: 260px;
+  position: relative;
 }
 
 .hero-media img {
@@ -684,19 +539,13 @@ main.container {
   pointer-events: none;
 }
 
-/* Make .hero-media able to position overlay */
-.hero-media {
-  position: relative;
-}
-
-/* Desktop: 2-column hero */
 @media (min-width: 900px) {
   .hero-surface { grid-column: span 7; }
   .hero-media   { grid-column: span 5; }
 }
 
 /* =========================
-   Home: featured Founder row
+   Home: Featured Founder row
    ========================= */
 .card.founder-copy { grid-column: span 12; }
 .card.founder-photo { grid-column: span 12; padding: 0; overflow: hidden; position: relative; }
@@ -717,8 +566,7 @@ main.container {
 .portrait-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(17,24,39,0.10), rgba(17,24,39,0.70));
+  background: linear-gradient(180deg, rgba(17,24,39,0.10), rgba(17,24,39,0.70));
   pointer-events: none;
 }
 
@@ -737,4 +585,108 @@ main.container {
 .portrait-sub {
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+/* =========================
+   Contact Page (NO global overrides)
+   ========================= */
+.page-head {
+  padding: 1.5rem 0 1rem;
+}
+
+.page-head .lead {
+  max-width: 70ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.25rem;
+  padding: 0.5rem 0 2rem;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Apply tweaks ONLY when you add class="panel contact-panel" */
+.contact-panel {
+  padding: 1.35rem;
+}
+
+.contact-panel.subtle {
+  background: linear-gradient(180deg, rgba(31,41,51,0.78), rgba(17,24,39,0.82));
+}
+
+/* Type helpers scoped to contact to avoid collisions */
+.contact-grid .h3 { font-size: 1.15rem; margin: 0 0 0.75rem; }
+.contact-grid .h4 { font-size: 1.02rem; margin: 0 0 0.5rem; }
+.small { font-size: 0.92rem; }
+
+/* Form */
+.form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-row label {
+  font-weight: 700;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(245,241,232,0.18);
+  background: rgba(17,24,39,0.55);
+  color: inherit;
+  padding: 0.75rem 0.85rem;
+  outline: none;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: rgba(20,184,166,0.45);
+  box-shadow: 0 0 0 3px rgba(20,184,166,0.18);
+}
+
+.form-actions {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Lists + separators */
+.list {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.list li { margin: 0.4rem 0; }
+
+.rule {
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: 1rem 0;
+}
+
+.contact-lines a {
+  color: rgba(245,241,232,0.95);
+  text-decoration: none;
+}
+
+.contact-lines a:hover {
+  text-decoration: underline;
 }
