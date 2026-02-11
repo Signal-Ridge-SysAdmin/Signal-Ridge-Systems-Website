@@ -69,7 +69,7 @@ body::before{
 main.container {
   padding-top: 2rem;
   padding-bottom: 3.5rem;
-  min-height: calc(100vh - 160px); /* header+footer buffer */
+  min-height: calc(100vh - 160px);
 }
 
 /* =========================
@@ -374,6 +374,41 @@ main.container {
   backdrop-filter: blur(8px);
 }
 
+/* Light variant of page-surface (for headers on bright backgrounds) */
+.page-surface--light{
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(0,0,0,0.10);
+}
+
+.page-surface--light,
+.page-surface--light *{
+  color: #111 !important;
+  text-shadow: none !important;
+}
+
+/* =========================
+   Light Header Variant
+   Use:
+   <section class="page-head light"> ... </section>
+   <section class="page-header light"> ... </section>
+   ========================= */
+
+.page-header.light,
+.page-head.light{
+  display: inline-block;
+  background: rgba(255,255,255,0.72);
+  padding: 1.15rem 1.35rem;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.page-header.light * ,
+.page-head.light *{
+  color: #111 !important;
+  text-shadow: none !important;
+}
+
 /* =========================
    Services Helpers + Card Grid
    ========================= */
@@ -528,9 +563,9 @@ main.container {
 
 .card.founder-photo {
   grid-column: span 12;
-  padding: 1rem;            /* gives breathing room */
+  padding: 1rem;
   position: relative;
-  text-align: center;       /* centers the image visually */
+  text-align: center;
 }
 
 @media (min-width: 900px) {
@@ -538,21 +573,19 @@ main.container {
   .card.founder-photo { grid-column: span 4; }
 }
 
-/* Scale the image down instead of cropping it */
 .founder-photo .portrait {
   display: block;
   width: 100%;
-  max-width: 420px;         /* THIS is the key control */
+  max-width: 420px;
   height: auto;
 
-  margin: 0 auto;           /* horizontal centering */
-  border-radius: 12px;      /* softer than full card radius */
+  margin: 0 auto;
+  border-radius: 12px;
 }
 
-/* Overlay + caption still work, but only if you want them */
 .portrait-overlay {
   position: absolute;
-  inset: 1rem;              /* match padding */
+  inset: 1rem;
   background: linear-gradient(
     180deg,
     rgba(17,24,39,0.00),
@@ -592,25 +625,29 @@ main.container {
   opacity: 0.92;
 }
 
+/* TOP GRID: info + troubleshooting */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
   padding: 0.5rem 0 2rem;
-
-  grid-template-areas:
-    "info"
-    "form";
 }
 
-.contact-info { grid-area: info; }
-.contact-form { grid-area: form; }
-
+/* On desktop: two columns */
 @media (min-width: 900px) {
   .contact-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-    grid-template-areas: "form info";
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Bottom form section (centers form and gives breathing room) */
+.contact-form-section {
+  margin-top: 1.75rem;
+}
+
+.contact-form.wide {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Only applied when you use class="panel contact-panel ..." */
@@ -685,6 +722,15 @@ main.container {
 
 /* Honeypot field (hidden) */
 .hp { position: absolute; left: -9999px; top: -9999px; }
+
+/* New helpers for troubleshooting panel cards */
+.stack { display: grid; gap: 12px; }
+.mini-card {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(245,241,232,0.10);
+}
 
 /* =========================
    Flash Messages

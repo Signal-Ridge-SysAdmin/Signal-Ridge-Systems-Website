@@ -2,20 +2,24 @@
 {% block title %}Contact | Signal Ridge Systems LLC{% endblock %}
 
 {% block content %}
-<section class="page-head">
-  <h1>Contact</h1>
-  <p class="lead">
+
+<!-- Header (same structure + classes as Links page) -->
+<section class="page-header light">
+  <h1 class="page-title">Contact</h1>
+  <p class="page-lead">
     Tell me what you’re trying to accomplish and which service you’re interested in — individual, group, or partner program.
     No judgment. No jargon.
   </p>
-  <p class="muted small">
+  <p class="page-lead muted small" style="margin-top:-0.75rem;">
     If you’re reaching out on behalf of an organization, include the organization name, estimated headcount, and preferred dates.
   </p>
 </section>
 
+
 <!-- TOP: Info + service clarity -->
 <section class="contact-grid">
-  <!-- Mobile-first: Quick Info first -->
+
+  <!-- Quick Info -->
   <aside class="panel contact-panel subtle contact-info">
     <h2 class="h3">Quick info</h2>
 
@@ -59,6 +63,7 @@
     </p>
 
     <div class="stack">
+
       <!-- Individual troubleshooting -->
       <div class="mini-card">
         <h3 class="h4">Individual Digital Troubleshooting</h3>
@@ -94,6 +99,7 @@
           <strong>Pricing:</strong> flat-rate (scope-based)
         </p>
       </div>
+
     </div>
   </aside>
 </section>
@@ -114,7 +120,7 @@
         <input id="email" name="email" type="email" autocomplete="email" required />
       </div>
 
-      <!-- Honeypot (bots fill; humans never see) -->
+      <!-- Honeypot -->
       <div class="hp">
         <label for="company">Company</label>
         <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
@@ -173,4 +179,5 @@
     </form>
   </div>
 </section>
+
 {% endblock %}
