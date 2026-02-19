@@ -90,6 +90,8 @@ main.container {
   text-shadow: 0 2px 14px rgba(0,0,0,0.50);
 }
 
+.small { font-size: 0.92rem; }
+
 /* =========================
    Header
    ========================= */
@@ -350,8 +352,6 @@ main.container {
   padding: 2.25rem 0 3rem;
 }
 
-.page-header { margin-bottom: 1.5rem; }
-
 .page-title {
   margin: 0 0 0.5rem;
   font-size: clamp(1.8rem, 2.4vw, 2.6rem);
@@ -360,7 +360,7 @@ main.container {
 }
 
 .page-lead {
-  margin: 0 0 1.25rem;
+  margin: 0;
   max-width: 70ch;
   color: var(--muted);
 }
@@ -387,31 +387,21 @@ main.container {
 }
 
 /* =========================
-   Light Header Variant
-   Use:
-   <section class="page-head light"> ... </section>
-   <section class="page-header light"> ... </section>
+   Services + Shared Helpers
    ========================= */
-
-.page-header.light,
-.page-head.light{
-  display: inline-block;
-  background: rgba(255,255,255,0.72);
-  padding: 1.15rem 1.35rem;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(0,0,0,0.08);
+.section-title{
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  font-weight: 850;
+  letter-spacing: 0.2px;
 }
 
-.page-header.light * ,
-.page-head.light *{
-  color: #111 !important;
-  text-shadow: none !important;
+.section-lead{
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+  max-width: 65ch;
 }
 
-/* =========================
-   Services Helpers + Card Grid
-   ========================= */
 .subhead{
   margin: 1.0rem 0 0.35rem;
   font-size: 1.02rem;
@@ -445,34 +435,9 @@ main.container {
   margin-left: 0.25rem;
 }
 
-/* Card grid */
-.card-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 860px){
-  .card-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-
-  .card.half  { grid-column: span 1; }
-  .card.third { grid-column: span 1; }
-  .card.full  { grid-column: span 2; }
-}
-
-.panel.card{
-  display: flex;
-  flex-direction: column;
-}
-
-.panel.card .meta{ margin-top: auto; }
-
+/* Panel content typography */
 .panel h3{
-  font-size: 1.35rem;
+  font-size: 1.22rem;
   margin: 0 0 0.35rem;
 }
 
@@ -488,6 +453,44 @@ main.container {
 }
 
 .panel li{ margin: 0.28rem 0; }
+
+.panel .meta{ margin-top: 1rem; }
+.panel .meta .price{ font-weight: 850; }
+
+/* =========================
+   Services: Header + Two Main Panels
+   ========================= */
+.services-main{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 980px){
+  .services-main{
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* Keep the two big panels from doubling spacing */
+.services-main > .panel{
+  margin-bottom: 0;
+}
+
+/* Internal section separators inside each big panel */
+.service-block{
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.service-block:first-of-type{
+  margin-top: 1.25rem;
+  padding-top: 0;
+  border-top: none;
+}
 
 /* =========================
    Home Hero (split layout)
@@ -659,7 +662,6 @@ main.container {
 
 .contact-grid .h3 { font-size: 1.15rem; margin: 0 0 0.75rem; }
 .contact-grid .h4 { font-size: 1.02rem; margin: 0 0 0.5rem; }
-.small { font-size: 0.92rem; }
 
 .form {
   display: grid;
@@ -723,7 +725,7 @@ main.container {
 /* Honeypot field (hidden) */
 .hp { position: absolute; left: -9999px; top: -9999px; }
 
-/* New helpers for troubleshooting panel cards */
+/* Troubleshooting mini cards */
 .stack { display: grid; gap: 12px; }
 .mini-card {
   padding: 12px;
