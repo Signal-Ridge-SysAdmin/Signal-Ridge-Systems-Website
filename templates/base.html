@@ -10,8 +10,12 @@
     href="{{ url_for('static', filename='css/styles.css') }}?v=20260203-1"
   />
 </head>
+
 <body>
 
+  <!-- =========================
+       Site Header
+       ========================= -->
   <header class="site-header">
     <div class="container header-inner">
 
@@ -27,39 +31,54 @@
         </div>
       </a>
 
-      <nav class="nav">
-        <a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="/services">
-          Services
-        </a>
-        <a class="nav-link {% if active_page == 'links' %}active{% endif %}" href="/links">
-          Links
-        </a>
-        <a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="/contact">
-          Contact
-        </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="/services">Services</a>
+        <a class="nav-link {% if active_page == 'links' %}active{% endif %}" href="/links">Links</a>
+        <a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="/contact">Contact</a>
+
+        <span class="nav-divider" aria-hidden="true"></span>
+
+        <a
+          class="social-link"
+          href="https://www.facebook.com/profile.php?id=61588303447585"
+          target="_blank"
+          rel="noopener"
+        >Facebook</a>
+
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/william-zade-5b40983b2/"
+          target="_blank"
+          rel="noopener"
+        >LinkedIn</a>
       </nav>
 
     </div>
   </header>
 
+  <!-- =========================
+       Main Content
+       ========================= -->
   <main class="container">
 
-  {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <div class="flash-stack">
-        {% for category, message in messages %}
-          <div class="flash flash-{{ category }}">
-            {{ message }}
-          </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-  {% endwith %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-stack" aria-live="polite" aria-atomic="true">
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
 
-  {% block content %}{% endblock %}
-</main>
+    {% block content %}{% endblock %}
+  </main>
 
-
+  <!-- =========================
+       Footer
+       ========================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>© 2026 Signal Ridge Systems LLC</div>

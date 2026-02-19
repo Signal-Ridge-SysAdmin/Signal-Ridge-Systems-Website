@@ -170,6 +170,56 @@ main.container {
   align-items: center;
 }
 
+/* NEW: divider + social links */
+.nav-divider{
+  width: 1px;
+  height: 26px;
+  background: var(--line);
+  margin: 0 0.4rem;
+}
+
+.social-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 42px;
+  padding: 0 0.75rem;
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: var(--muted);
+  background: rgba(17,24,39,0.35);
+  border: 1px solid rgba(245,241,232,0.14);
+
+  transition:
+    transform 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    background 140ms ease;
+}
+
+.social-link:hover{
+  transform: translateY(-1px);
+  color: var(--text);
+  border-color: rgba(20,184,166,0.45);
+  background: rgba(17,24,39,0.55);
+  box-shadow: 0 12px 28px rgba(20,184,166,0.18);
+}
+
+@media (max-width: 520px){
+  .nav-divider{ display: none; }
+}
+/* END NEW */
+
+.nav-link {
+  ...
+}
+
 .nav-link {
   display: inline-flex;
   align-items: center;
