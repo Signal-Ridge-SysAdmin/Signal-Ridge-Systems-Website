@@ -24,19 +24,20 @@
   <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/favicon/android-chrome-512x512.png') }}">
 
   <!-- =========================
-       Open Graph (Versioned)
+       Open Graph (JPG + Versioned)
        ========================= -->
-  {% set og_version = "20260220-1" %}
-  {% set og_image = url_for('static', filename='img/og/open_graph_image.png', _external=True) ~ "?v=" ~ og_version %}
+  {% set og_version = "20260220-2" %}
+  {% set og_image = url_for('static', filename='img/og/open_graph_image.jpg', _external=True) ~ "?v=" ~ og_version %}
 
   <meta property="og:site_name" content="Signal Ridge Systems LLC" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Signal Ridge Systems LLC" />
   <meta property="og:description" content="Practical technology help for real life. Confidence with computers, phones, email, and online safety." />
   <meta property="og:url" content="{{ request.url }}" />
+
   <meta property="og:image" content="{{ og_image }}" />
   <meta property="og:image:secure_url" content="{{ og_image }}" />
-  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
