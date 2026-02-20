@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#111827" />
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ request.url }}" />
+
+  <!-- Styles -->
   <link
     rel="stylesheet"
     href="{{ url_for('static', filename='css/styles.css') }}?v=20260203-1"
@@ -18,6 +22,22 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
   <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/favicon/android-chrome-192x192.png') }}">
   <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/favicon/android-chrome-512x512.png') }}">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Signal Ridge Systems LLC" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Signal Ridge Systems LLC" />
+  <meta property="og:description" content="Practical technology help for real life. Confidence with computers, phones, email, and online safety." />
+  <meta property="og:url" content="{{ request.url }}" />
+  <meta property="og:image" content="{{ url_for('static', filename='img/og/open_graph_image.png', _external=True) }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Signal Ridge Systems LLC" />
+  <meta name="twitter:description" content="Practical technology help for real life. Confidence with computers, phones, email, and online safety." />
+  <meta name="twitter:image" content="{{ url_for('static', filename='img/og/open_graph_image.png', _external=True) }}" />
 </head>
 
 <body>
@@ -47,17 +67,19 @@
 
         <span class="nav-divider" aria-hidden="true"></span>
 
-        <a class="social-link"
-           href="https://www.facebook.com/profile.php?id=61588303447585"
-           target="_blank"
-           rel="noopener">
+        <a
+          class="social-link"
+          href="https://www.facebook.com/profile.php?id=61588303447585"
+          target="_blank"
+          rel="noopener noreferrer">
           Facebook
         </a>
 
-        <a class="social-link"
-           href="https://www.linkedin.com/in/william-zade-5b40983b2/"
-           target="_blank"
-           rel="noopener">
+        <a
+          class="social-link"
+          href="https://www.linkedin.com/in/william-zade-5b40983b2/"
+          target="_blank"
+          rel="noopener noreferrer">
           LinkedIn
         </a>
       </nav>
