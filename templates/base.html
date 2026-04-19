@@ -4,15 +4,21 @@
   <meta charset="UTF-8" />
   <title>{% block title %}Signal Ridge Systems LLC{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#111827" />
+  <meta name="theme-color" content="#0f1115" />
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ request.url }}" />
+  <link rel="canonical" href="{{ request.base_url }}" />
+
+  <!-- Primary Meta -->
+  <meta
+    name="description"
+    content="Signal Ridge Systems helps organizations stabilize confusing, unreliable, or undocumented technology environments through practical IT support, workflow improvement, documentation, and system clarity."
+  />
 
   <!-- Styles -->
   <link
     rel="stylesheet"
-    href="{{ url_for('static', filename='css/styles.css') }}?v=20260203-1"
+    href="{{ url_for('static', filename='css/styles.css') }}?v=20260419-1"
   />
 
   <!-- Favicons -->
@@ -24,28 +30,31 @@
   <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/favicon/android-chrome-512x512.png') }}">
 
   <!-- =========================
-       Open Graph (JPG + Versioned)
+       Open Graph
        ========================= -->
-  {% set og_version = "20260220-2" %}
+  {% set og_version = "20260419-1" %}
   {% set og_image = url_for('static', filename='img/og/open_graph_image.jpg', _external=True) ~ "?v=" ~ og_version %}
 
   <meta property="og:site_name" content="Signal Ridge Systems LLC" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Signal Ridge Systems LLC" />
-  <meta property="og:description" content="Practical technology help for real life. Confidence with computers, phones, email, and online safety." />
-  <meta property="og:url" content="{{ request.url }}" />
-
+  <meta
+    property="og:description"
+    content="Clear systems. Stable operations. Practical IT support for businesses and organizations that need technology to make sense."
+  />
+  <meta property="og:url" content="{{ request.base_url }}" />
   <meta property="og:image" content="{{ og_image }}" />
   <meta property="og:image:secure_url" content="{{ og_image }}" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
-  <link rel="canonical" href="{{ request.base_url }}" />
-<meta property="og:url" content="{{ request.base_url }}" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Signal Ridge Systems LLC" />
-  <meta name="twitter:description" content="Practical technology help for real life. Confidence with computers, phones, email, and online safety." />
+  <meta
+    name="twitter:description"
+    content="Clear systems. Stable operations. Practical IT support for businesses and organizations that need technology to make sense."
+  />
   <meta name="twitter:image" content="{{ og_image }}" />
 </head>
 
@@ -57,7 +66,7 @@
   <header class="site-header">
     <div class="container header-inner">
 
-      <a class="brand" href="/" aria-label="Signal Ridge Systems home">
+      <a class="brand" href="{{ url_for('home') }}" aria-label="Signal Ridge Systems home">
         <img
           class="brand-logo"
           src="{{ url_for('static', filename='img/logo.png') }}"
@@ -65,24 +74,17 @@
         />
         <div class="brand-text">
           <div class="brand-name">Signal Ridge Systems LLC</div>
-          <div class="brand-tag">Everyday Tech Done Simply</div>
+          <div class="brand-tag">Clear systems. Stable operations. Practical support.</div>
         </div>
       </a>
 
       <nav class="nav" aria-label="Primary">
-        <a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="/services">Services</a>
-        <a class="nav-link {% if active_page == 'links' %}active{% endif %}" href="/links">Links</a>
-        <a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="/contact">Contact</a>
+        <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
+        <a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="{{ url_for('services') }}">Services</a>
+        <a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
+        <a class="nav-link {% if active_page == 'links' %}active{% endif %}" href="{{ url_for('links') }}">Resources</a>
 
         <span class="nav-divider" aria-hidden="true"></span>
-
-        <a
-          class="social-link"
-          href="https://www.facebook.com/profile.php?id=61588303447585"
-          target="_blank"
-          rel="noopener noreferrer">
-          Facebook
-        </a>
 
         <a
           class="social-link"
@@ -90,6 +92,14 @@
           target="_blank"
           rel="noopener noreferrer">
           LinkedIn
+        </a>
+
+        <a
+          class="social-link"
+          href="https://www.facebook.com/profile.php?id=61588303447585"
+          target="_blank"
+          rel="noopener noreferrer">
+          Facebook
         </a>
       </nav>
 
@@ -99,21 +109,23 @@
   <!-- =========================
        Main Content
        ========================= -->
-  <main class="container">
+  <main class="site-main">
+    <div class="container">
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <div class="flash-stack" aria-live="polite" aria-atomic="true">
-          {% for category, message in messages %}
-            <div class="flash flash-{{ category }}">
-              {{ message }}
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-stack" aria-live="polite" aria-atomic="true">
+            {% for category, message in messages %}
+              <div class="flash flash-{{ category }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
 
-    {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
+    </div>
   </main>
 
   <!-- =========================
@@ -121,8 +133,18 @@
        ========================= -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© 2026 Signal Ridge Systems LLC</div>
-      <div class="muted">Gillette, WY • Remote options available</div>
+      <div class="footer-block">
+        <div class="footer-brand">Signal Ridge Systems LLC</div>
+        <div class="muted">Gillette, WY • Serving local and remote clients</div>
+      </div>
+
+      <div class="footer-block">
+        <div class="footer-meta">Practical IT support, documentation, workflow improvement, and system stabilization.</div>
+      </div>
+
+      <div class="footer-block footer-block-right">
+        <div>© 2026 Signal Ridge Systems LLC</div>
+      </div>
     </div>
   </footer>
 
