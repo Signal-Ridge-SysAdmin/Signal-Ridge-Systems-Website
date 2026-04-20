@@ -2,42 +2,36 @@
 {% block title %}Signal Ridge Systems LLC{% endblock %}
 
 {% block content %}
-
 <!-- =====================
      Hero / Who We Are
      ===================== -->
-<section class="hero">
-  <div class="hero-grid">
-
-    <!-- Left: Company -->
-    <div class="hero-surface">
-      <h1>Technology shouldn’t make you feel stupid.</h1>
-
-      <p class="lead">
-        Signal Ridge Systems helps small businesses, public organizations, and real-world teams
-        make sense of confusing, unreliable, or undocumented technology environments.
-      </p>
-
-      <p class="lead">
-        We step in when systems are slowing people down, nobody is sure how things are set up,
-        or the technology technically “works” but still creates stress, confusion, and wasted time.
-      </p>
-
-      <div class="actions">
-        <a class="btn primary" href="{{ url_for('services') }}">See how we help</a>
-        <a class="btn secondary" href="{{ url_for('contact') }}">Start a conversation</a>
-      </div>
-    </div>
-
-    <!-- Right: Visual -->
-    <div class="hero-media">
+<section class="hero hero-single">
+  <div class="hero-surface hero-surface-mark">
+    <div class="hero-mark" aria-hidden="true">
       <img
-        src="{{ url_for('static', filename='img/SRS-desk.png') }}"
-        alt="Signal Ridge Systems work environment"
+        src="{{ url_for('static', filename='img/logo.png') }}"
+        alt=""
       />
-      <div class="hero-media-overlay"></div>
     </div>
 
+    <p class="eyebrow">Clear systems. Stable operations. Practical support.</p>
+
+    <h1>Technology shouldn’t make you feel stupid.</h1>
+
+    <p class="lead">
+      Signal Ridge Systems helps small businesses, public organizations, and real-world teams
+      make sense of confusing, unreliable, or undocumented technology environments.
+    </p>
+
+    <p class="lead">
+      We step in when systems are slowing people down, nobody is sure how things are set up,
+      or the technology technically “works” but still creates stress, confusion, and wasted time.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="{{ url_for('services') }}">See how we help</a>
+      <a class="btn secondary" href="{{ url_for('contact') }}">Start a conversation</a>
+    </div>
   </div>
 </section>
 
