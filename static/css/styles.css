@@ -912,13 +912,16 @@ body::before {
 .list li {
   margin: 0.4rem 0;
 }
-
-contact-lines a {
-  color: rgba(230,234,240,0.95);
+.contact-lines a {
+  color: #d97a1e;
   text-decoration: none;
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(255,255,255,0.65);
 }
 
-.contact-lines a:hover {
+.contact-lines a:hover,
+.contact-lines a:focus-visible {
+  color: #f08c28;
   text-decoration: underline;
 }
 
