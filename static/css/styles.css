@@ -66,17 +66,9 @@ body::before {
    Layout
    ========================= */
 .container {
-  max-width: (70%,1400px);
+  max-width: (82%,1440px);
   margin: 1 auto;
   padding: 1.5rem 2rem;
-}
-
-.container > .left {
-  flex: 1.2;
-}
-
-.container > .right {
-  flex: 0.8;
 }
 
 .site-main {
@@ -613,7 +605,7 @@ body::before {
 
 @media (min-width: 980px) {
   .services-main {
-    grid-template-columns: 3, 1fr;
+    grid-template-columns: repeat(3, 1fr);
     align-items: start;
   }
 }
@@ -732,7 +724,7 @@ body::before {
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem,4vw, 3.8re);
+    font-size: clamp(2.4rem,4vw, 3.8rem);
     max-width: 13ch;
   }
 }
@@ -743,7 +735,7 @@ body::before {
   }
 
   .hero-surface {
-    padding: 2.75rem;
+    padding: 1.5rem;
     min-height: auto;
   }
 
@@ -763,7 +755,7 @@ body::before {
 
   .hero .lead {
     max-width: 66ch;
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .eyebrow {
