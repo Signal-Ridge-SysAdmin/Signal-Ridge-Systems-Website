@@ -833,61 +833,41 @@ body::before {
 /* =========================
    Contact Page
    ========================= */
-.page-head {
-  padding: 1.5rem 0 1rem;
-}
-
-.page-head .lead {
-  max-width: 70ch;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  opacity: 0.92;
-}
-
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding: 0.5rem 0 2rem;
 }
 
 @media (min-width: 900px) {
   .contact-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: start;
   }
 }
 
 .contact-form-section {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 
 .contact-form.wide {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 .contact-panel {
-  padding: 1.35rem;
+  padding: 1.5rem;
 }
 
 .contact-panel.subtle {
   background: linear-gradient(180deg, rgba(31,41,51,0.78), rgba(17,24,39,0.82));
 }
 
-.contact-grid .h3 {
-  font-size: 1.15rem;
-  margin: 0 0 0.75rem;
-}
-
-.contact-grid .h4 {
-  font-size: 1.02rem;
-  margin: 0 0 0.5rem;
-}
-
 .form {
   display: grid;
-  gap: 0.9rem;
-  margin-top: 0.5rem;
+  gap: 1rem;
+  margin-top: 0.75rem;
 }
 
 .form-row {
@@ -921,7 +901,7 @@ body::before {
 .form-actions {
   display: grid;
   gap: 0.5rem;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .list {
@@ -933,14 +913,7 @@ body::before {
   margin: 0.4rem 0;
 }
 
-.rule {
-  border: none;
-  height: 1px;
-  background: var(--line);
-  margin: 1rem 0;
-}
-
-.contact-lines a {
+contact-lines a {
   color: rgba(230,234,240,0.95);
   text-decoration: none;
 }
@@ -953,11 +926,6 @@ body::before {
   position: absolute;
   left: -9999px;
   top: -9999px;
-}
-
-.stack {
-  display: grid;
-  gap: 12px;
 }
 
 .mini-card {

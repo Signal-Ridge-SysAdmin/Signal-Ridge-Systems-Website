@@ -1,183 +1,133 @@
 {% extends "base.html" %}
-{% block title %}Contact | Signal Ridge Systems LLC{% endblock %}
+{% block title %}Contact | Signal Ridge Systems{% endblock %}
 
 {% block content %}
+<section class="page">
+  <div class="page-surface">
 
-<!-- Header (same structure + classes as Links page) -->
-<section class="page-header light">
-  <h1 class="page-title">Contact</h1>
-  <p class="page-lead">
-    Tell me what you’re trying to accomplish and which service you’re interested in — individual, group, or partner program.
-    No judgment. No jargon.
-  </p>
-  <p class="page-lead muted small" style="margin-top:-0.75rem;">
-    If you’re reaching out on behalf of an organization, include the organization name, estimated headcount, and preferred dates.
-  </p>
-</section>
+    <!-- Header -->
+    <div class="panel">
+      <h1 class="page-title">Contact</h1>
+      <p class="page-lead">
+        If your systems are confusing, unreliable, or slowing people down, reach out.
+        You do not need to diagnose the whole problem first. Just explain what is happening,
+        what is getting in the way, and what outcome you need.
+      </p>
+    </div>
 
+    <!-- Contact Guidance -->
+    <div class="contact-grid">
 
-<!-- TOP: Info + service clarity -->
-<section class="contact-grid">
-
-  <!-- Quick Info -->
-  <aside class="panel contact-panel subtle contact-info">
-    <h2 class="h3">Quick info</h2>
-
-    <ul class="list">
-      <li><strong>Location:</strong> Gillette, Wyoming (and nearby Campbell County)</li>
-      <li><strong>Meeting options:</strong> in-person (public location) or remote session</li>
-      <li><strong>Response time:</strong> usually within 1 business day</li>
-    </ul>
-
-    <hr class="rule" />
-
-    <h3 class="h4">What to include</h3>
-    <ul class="list">
-      <li><strong>Which service you want</strong> (or “help me choose”)</li>
-      <li>Device type (Windows/Mac/iPhone/Android)</li>
-      <li>What you expected to happen vs. what happened</li>
-      <li>Any error message (copy/paste is fine)</li>
-      <li>If this feels urgent (security, money, locked accounts)</li>
-    </ul>
-
-    <hr class="rule" />
-
-    <h3 class="h4">Prefer email or phone?</h3>
-    <p class="contact-lines">
-      <strong>Email:</strong>
-      <a href="mailto:info@signalridgesystems.dev">info@signalridgesystems.dev</a><br />
-      <strong>Phone:</strong>
-      <a href="tel:+13072280607">(307) 228-0607</a>
-    </p>
-
-    <p class="muted small">
-      If this is a suspected scam or account compromise, say so in the message — we’ll prioritize it.
-    </p>
-  </aside>
-
-  <!-- Service clarity cards -->
-  <aside class="panel contact-panel subtle">
-    <h2 class="h3">Digital troubleshooting</h2>
-    <p class="muted">
-      Not sure what service fits? These are the two “get me unstuck” options for individuals and groups.
-    </p>
-
-    <div class="stack">
-
-      <!-- Individual troubleshooting -->
-      <div class="mini-card">
-        <h3 class="h4">Individual Digital Troubleshooting</h3>
-        <p class="muted small">
-          For one person who needs help diagnosing and resolving a specific issue.
+      <div class="panel contact-panel">
+        <h2 class="section-title">When to reach out</h2>
+        <p class="section-lead">
+          This page is a good fit for organizations, small businesses, partner programs,
+          and individuals who need practical help with technology, workflow, or system clarity.
         </p>
+
+        <h3 class="subhead">Good reasons to contact Signal Ridge Systems</h3>
         <ul class="list">
-          <li>Account access and recovery problems</li>
-          <li>Computer running slow / acting strange</li>
-          <li>Email, printer, browser, and setup issues</li>
-          <li>Basic safety checks after a suspicious message</li>
+          <li>You are dealing with recurring technical problems</li>
+          <li>Your workflow feels confusing or inefficient</li>
+          <li>No one is fully sure how a system is set up</li>
+          <li>You need documentation, cleanup, or a clearer process</li>
+          <li>You need guided support, training, or a scoped conversation</li>
         </ul>
-        <p class="muted small">
-          <strong>Format:</strong> 1-on-1 • in-person or remote<br />
-          <strong>Pricing:</strong> contact
+
+        <h3 class="subhead">Helpful information to include</h3>
+        <ul class="list">
+          <li>What is happening now</li>
+          <li>What you expected to happen instead</li>
+          <li>Who is affected</li>
+          <li>Any deadlines, urgency, or constraints</li>
+          <li>Whether this is for an individual, a business, or an organization</li>
+        </ul>
+
+        <h3 class="subhead">What to expect</h3>
+        <p class="small">
+          Most conversations start with a short review of the situation, followed by a recommendation
+          for the next practical step. If the issue needs deeper investigation, we will scope that clearly.
         </p>
       </div>
 
-      <!-- Group troubleshooting -->
-      <div class="mini-card">
-        <h3 class="h4">Group Digital Troubleshooting</h3>
-        <p class="muted small">
-          For small groups or organizations that need common issues fixed and workflows made consistent.
-        </p>
-        <ul class="list">
-          <li>Shared workflow problems (email, docs, logins)</li>
-          <li>Device setup consistency and basic hygiene</li>
-          <li>“Everyone keeps getting stuck on the same thing”</li>
-          <li>Lightweight safety improvements and best practices</li>
-        </ul>
-        <p class="muted small">
-          <strong>Group size:</strong> 6–20 • in-person<br />
-          <strong>Pricing:</strong> flat-rate (scope-based)
-        </p>
+      <div class="panel contact-panel subtle">
+        <h2 class="section-title">Direct contact</h2>
+
+        <div class="mini-card">
+          <h3 class="subhead">Email</h3>
+          <p class="contact-lines">
+            <a href="mailto:william.zade@signalridgesystems.dev">william.zade@signalridgesystems.dev</a>
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3 class="subhead">Phone</h3>
+          <p class="contact-lines">
+            <a href="tel:+13072280607">(307) 228-0607</a>
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3 class="subhead">Location & service model</h3>
+          <p class="small">
+            Based in Gillette, Wyoming. Local and remote support available depending on the work.
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h3 class="subhead">Response expectations</h3>
+          <p class="small">
+            Most messages receive a response within 1 business day. If your issue involves
+            account compromise, scam activity, or something time-sensitive, say so clearly in the message.
+          </p>
+        </div>
       </div>
 
     </div>
-  </aside>
-</section>
 
-<!-- BOTTOM: Contact form -->
-<section class="contact-form-section">
-  <div class="panel contact-panel contact-form wide">
-    <h2 class="h3">Send a message</h2>
-
-    <form method="post" action="{{ url_for('contact') }}">
-      <div class="form-row">
-        <label for="name">Your name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required />
-      </div>
-
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required />
-      </div>
-
-      <!-- Honeypot -->
-      <div class="hp">
-        <label for="company">Company</label>
-        <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
-      </div>
-
-      <div class="form-row">
-        <label for="phone">Phone (optional)</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" />
-      </div>
-
-      <div class="form-row">
-        <label for="topic">Which service are you interested in?</label>
-        <select id="topic" name="topic" required>
-          <option value="" selected disabled>Select one…</option>
-
-          <optgroup label="Partner Programs (Organizations)">
-            <option>Partner: 1-Day Workshop</option>
-            <option>Partner: 4-Day Workshop</option>
-            <option>Partner: Ongoing Program Support</option>
-          </optgroup>
-
-          <optgroup label="Group Workshops (6–20 people)">
-            <option>Digital Safety &amp; Scam Awareness Workshop</option>
-            <option>Group Digital Troubleshooting</option>
-          </optgroup>
-
-          <optgroup label="Individual Services">
-            <option>Personal Digital Security Intensive (1–5 people)</option>
-            <option>Individual Digital Troubleshooting</option>
-            <option>1:1 Help Session</option>
-            <option>Online Safety Checkup</option>
-            <option>Resume &amp; Applications Help</option>
-          </optgroup>
-
-          <option>Not sure — help me choose</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="6"
-          required
-          placeholder="Example: “I’m interested in the Digital Safety & Scam Awareness Workshop for a group of 12. Mostly iPhones and Windows laptops. We’d prefer a Tuesday or Thursday afternoon.”"
-        ></textarea>
-      </div>
-
-      <div class="form-actions">
-        <button class="btn primary" type="submit">Send</button>
-        <p class="muted small">
-          By sending this message you’re only requesting contact — no commitment and no pressure.
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+      <div class="panel contact-panel contact-form wide">
+        <h2 class="section-title">Send a message</h2>
+        <p class="section-lead">
+          Describe what is going on in plain language. Clarity helps more than technical jargon.
         </p>
+
+        <form method="post" class="form">
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone <span class="muted">(optional)</span></label>
+            <input id="phone" name="phone" type="text">
+          </div>
+
+          <div class="form-row">
+            <label for="organization">Organization <span class="muted">(optional)</span></label>
+            <input id="organization" name="organization" type="text">
+          </div>
+
+          <div class="form-row">
+            <label for="message">What’s going on?</label>
+            <textarea id="message" name="message" rows="8" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send message</button>
+          </div>
+        </form>
       </div>
-    </form>
+    </section>
+
   </div>
 </section>
-
 {% endblock %}
