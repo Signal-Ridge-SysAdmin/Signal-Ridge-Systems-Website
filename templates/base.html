@@ -18,7 +18,7 @@
   <!-- Styles -->
   <link
     rel="stylesheet"
-    href="{{ url_for('static', filename='css/styles.css') }}?v=20260419-1"
+    href="{{ url_for('static', filename='css/styles.css') }}?v=20260519-1"
   />
 
   <!-- Favicons -->
@@ -29,10 +29,8 @@
   <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/favicon/android-chrome-192x192.png') }}">
   <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/favicon/android-chrome-512x512.png') }}">
 
-  <!-- =========================
-       Open Graph
-       ========================= -->
-  {% set og_version = "20260419-1" %}
+  <!-- Open Graph -->
+  {% set og_version = "20260519-1" %}
   {% set og_image = url_for('static', filename='img/og/open_graph_image.jpg', _external=True) ~ "?v=" ~ og_version %}
 
   <meta property="og:site_name" content="Signal Ridge Systems LLC" />
@@ -60,9 +58,7 @@
 
 <body>
 
-  <!-- =========================
-       Site Header
-       ========================= -->
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
 
@@ -72,6 +68,7 @@
           src="{{ url_for('static', filename='img/logo.png') }}"
           alt="Signal Ridge Systems logo"
         />
+
         <div class="brand-text">
           <div class="brand-name">Signal Ridge Systems LLC</div>
           <div class="brand-tag">Clear systems. Stable operations. Practical support.</div>
@@ -79,10 +76,35 @@
       </a>
 
       <nav class="nav" aria-label="Primary">
-        <a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="{{ url_for('home') }}">Home</a>
-        <a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="{{ url_for('services') }}">Services</a>
-        <a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
-        {#<a class="nav-link {% if active_page == 'links' %}active{% endif %}" href="{{ url_for('links') }}">Resources</a>#}
+        <a
+          class="nav-link {% if active_page == 'home' %}active{% endif %}"
+          href="{{ url_for('home') }}"
+        >
+          Home
+        </a>
+
+        <a
+          class="nav-link {% if active_page == 'services' %}active{% endif %}"
+          href="{{ url_for('services') }}"
+        >
+          Services
+        </a>
+
+        <a
+          class="nav-link {% if active_page == 'contact' %}active{% endif %}"
+          href="{{ url_for('contact') }}"
+        >
+          Contact
+        </a>
+
+        {#
+        <a
+          class="nav-link {% if active_page == 'links' %}active{% endif %}"
+          href="{{ url_for('links') }}"
+        >
+          Resources
+        </a>
+        #}
 
         <span class="nav-divider" aria-hidden="true"></span>
 
@@ -90,7 +112,8 @@
           class="social-link"
           href="https://www.linkedin.com/in/william-zade-5b40983b2/"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           LinkedIn
         </a>
 
@@ -98,7 +121,8 @@
           class="social-link"
           href="https://www.facebook.com/profile.php?id=61588303447585"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           Facebook
         </a>
       </nav>
@@ -106,12 +130,11 @@
     </div>
   </header>
 
-  <!-- =========================
-       Main Content
-       ========================= -->
+  <!-- Main Content -->
   <main class="site-main">
-    <div class="container">
 
+    <!-- Flash messages stay constrained, but page content can define its own sections -->
+    <div class="container">
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
           <div class="flash-stack" aria-live="polite" aria-atomic="true">
@@ -123,28 +146,31 @@
           </div>
         {% endif %}
       {% endwith %}
-
-      {% block content %}{% endblock %}
     </div>
+
+    {% block content %}{% endblock %}
+
   </main>
 
-  <!-- =========================
-       Footer
-       ========================= -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
+
       <div class="footer-block">
         <div class="footer-brand">Signal Ridge Systems LLC</div>
         <div class="muted">Gillette, WY • Serving local and remote clients</div>
       </div>
 
       <div class="footer-block">
-        <div class="footer-meta">Practical IT support, documentation, workflow improvement, and system stabilization.</div>
+        <div class="footer-meta">
+          Practical IT support, documentation, workflow improvement, and system stabilization.
+        </div>
       </div>
 
       <div class="footer-block footer-block-right">
         <div>© 2026 Signal Ridge Systems LLC</div>
       </div>
+
     </div>
   </footer>
 

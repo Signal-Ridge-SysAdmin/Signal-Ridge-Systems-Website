@@ -2,11 +2,34 @@
 {% block title %}Signal Ridge Systems LLC{% endblock %}
 
 {% block content %}
+
 <!-- =====================
      Hero / Who We Are
      ===================== -->
-<section class="hero hero-single">
-  <div class="hero-surface hero-surface-mark">
+<section class="hero-section">
+  <div class="container hero-layout">
+
+    <div class="hero-copy">
+      <p class="eyebrow">Clear systems. Stable operations. Practical support.</p>
+
+      <h1>Technology shouldn’t make you feel stupid.</h1>
+
+      <p class="lead">
+        Signal Ridge Systems helps small businesses, public organizations, and real-world teams
+        make sense of confusing, unreliable, or undocumented technology environments.
+      </p>
+
+      <p class="lead">
+        We step in when systems are slowing people down, nobody is sure how things are set up,
+        or the technology technically “works” but still creates stress, confusion, and wasted time.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="{{ url_for('services') }}">See how we help</a>
+        <a class="btn secondary" href="{{ url_for('contact') }}">Start a conversation</a>
+      </div>
+    </div>
+
     <div class="hero-mark" aria-hidden="true">
       <img
         src="{{ url_for('static', filename='img/logo.png') }}"
@@ -14,127 +37,206 @@
       />
     </div>
 
-    <p class="eyebrow">Clear systems. Stable operations. Practical support.</p>
-
-    <h1>Technology shouldn’t make you feel stupid.</h1>
-
-    <p class="lead">
-      Signal Ridge Systems helps small businesses, public organizations, and real-world teams
-      make sense of confusing, unreliable, or undocumented technology environments.
-    </p>
-
-    <p class="lead">
-      We step in when systems are slowing people down, nobody is sure how things are set up,
-      or the technology technically “works” but still creates stress, confusion, and wasted time.
-    </p>
-
-    <div class="actions">
-      <a class="btn primary" href="{{ url_for('services') }}">See how we help</a>
-      <a class="btn secondary" href="{{ url_for('contact') }}">Start a conversation</a>
-    </div>
   </div>
 </section>
 
+
 <!-- =====================
-     Two-Column Main Content
+     The Real Problem
      ===================== -->
-<section class="section">
-  <div class="home-columns">
+<section class="brief-section">
+  <div class="container brief-layout">
 
-    <!-- Left Column -->
-    <div class="home-column">
-      <div class="panel card">
-        <h3>Where we help most</h3>
-        <p class="kicker">
-          When the system is running, but nobody really understands it
-        </p>
+    <div class="section-label">The real problem</div>
 
-        <ul>
-          <li>Confusing or poorly explained technology environments</li>
-          <li>Broken workflows and recurring operational friction</li>
-          <li>Undocumented systems and unclear ownership</li>
-          <li>Support gaps between users, vendors, and existing IT</li>
-        </ul>
-      </div>
+    <div class="brief-copy">
+      <h2>Most technology problems are really structure problems.</h2>
 
-      <div class="panel card">
-        <h3>What we actually do</h3>
-        <p class="kicker">
-          We fix what’s broken and make it make sense
-        </p>
+      <p>
+        The software may launch. The printer may technically exist on the network.
+        The account may still be active. The file may be somewhere in the shared drive.
+        But if nobody understands the system, the work still slows down.
+      </p>
 
-        <p>
-          Signal Ridge Systems provides practical IT support, workflow improvement, documentation,
-          and system stabilization for organizations that need more than generic tech support.
-        </p>
-
-        <p>
-          We help reduce operational friction by identifying what is actually going wrong,
-          cleaning up the structure around it, and making sure the people using the system
-          understand it well enough to move forward with confidence.
-        </p>
-      </div>
-    </div>
-
-    <!-- Right Column -->
-    <div class="home-column">
-      <div class="panel card">
-        <h3>How we work</h3>
-        <p class="kicker">
-          Calm, practical, and focused on clarity
-        </p>
-
-        <ul>
-          <li>Plain language — no jargon</li>
-          <li>Root-cause thinking, not symptom chasing</li>
-          <li>Documentation that makes systems easier to support</li>
-          <li>Real-world solutions people can actually use</li>
-        </ul>
-      </div>
-
-      <div class="panel card founder-copy">
-        <h3>About the founder</h3>
-
-        <p>
-          Signal Ridge Systems was founded by William Zade, a technologist, veteran,
-          and systems-minded problem solver focused on reducing operational friction.
-        </p>
-
-        <p>
-          William has spent years working in IT, systems administration, troubleshooting,
-          and user support, helping people deal not just with technical failures,
-          but with the confusion and instability that often surround them.
-        </p>
-
-        <p>
-          His approach is straightforward: figure out what is actually happening,
-          explain it clearly, document what matters, and leave the environment
-          more stable and more understandable than it was before.
-        </p>
-
-        <p class="muted">
-          Clear systems. Stable operations. Practical support.
-        </p>
+      <div class="divider-list">
+        <div>Confusing or poorly explained technology environments</div>
+        <div>Broken workflows and recurring operational friction</div>
+        <div>Undocumented systems and unclear ownership</div>
+        <div>Support gaps between users, vendors, and existing IT</div>
       </div>
     </div>
 
   </div>
 </section>
 
+
 <!-- =====================
-     Full Width Closing CTA
+     What We Do
      ===================== -->
-<section class="section alt">
-  <div class="panel card home-cta">
-    <h3>If something feels off in your systems, you’re probably right.</h3>
-    <p class="kicker">
-      Let’s take a look and make it make sense.
+<section class="brief-section section-dark">
+  <div class="container brief-layout">
+
+    <div class="section-label">What we do</div>
+
+    <div class="brief-copy">
+      <h2>We fix what’s broken and make it make sense.</h2>
+
+      <p>
+        Signal Ridge Systems provides practical IT support, workflow improvement,
+        documentation, and system stabilization for organizations that need more
+        than generic tech support.
+      </p>
+
+      <p>
+        We reduce operational friction by identifying what is actually going wrong,
+        cleaning up the structure around it, and making sure the people using the system
+        understand it well enough to move forward with confidence.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     Capabilities
+     ===================== -->
+<section class="capabilities-section">
+  <div class="container">
+
+    <div class="section-heading-row">
+      <p class="section-label">Where we help most</p>
+      <h2>Practical support for systems people actually have to use.</h2>
+    </div>
+
+    <div class="capability-list">
+
+      <article class="capability-item">
+        <div class="capability-number">01</div>
+        <div class="capability-copy">
+          <h3>IT support and troubleshooting</h3>
+          <p>
+            Printers, workstations, accounts, software issues, network headaches,
+            and the recurring problems everyone has been working around for too long.
+          </p>
+        </div>
+      </article>
+
+      <article class="capability-item">
+        <div class="capability-number">02</div>
+        <div class="capability-copy">
+          <h3>Workflow and process cleanup</h3>
+          <p>
+            File structure, access paths, handoffs, onboarding, documentation,
+            and the messy middle between the tool and the actual work.
+          </p>
+        </div>
+      </article>
+
+      <article class="capability-item">
+        <div class="capability-number">03</div>
+        <div class="capability-copy">
+          <h3>System clarity and documentation</h3>
+          <p>
+            Clear notes, support procedures, ownership maps, and plain-language explanations
+            that help people understand what changed and why it matters.
+          </p>
+        </div>
+      </article>
+
+      <article class="capability-item">
+        <div class="capability-number">04</div>
+        <div class="capability-copy">
+          <h3>Legacy and technical consulting</h3>
+          <p>
+            Older systems, COBOL, modernization planning, transition risk,
+            and preserving what still works while building the next step carefully.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     How We Work
+     ===================== -->
+<section class="method-section">
+  <div class="container">
+
+    <div class="section-heading-row">
+      <p class="section-label">How we work</p>
+      <h2>Calm, practical, and focused on clarity.</h2>
+    </div>
+
+    <div class="method-line">
+      <span>Trace the problem</span>
+      <span>Find the failure point</span>
+      <span>Fix what can be fixed</span>
+      <span>Document what changed</span>
+      <span>Leave it stronger</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     About the Founder
+     ===================== -->
+<section class="brief-section">
+  <div class="container brief-layout">
+
+    <div class="section-label">Founder</div>
+
+    <div class="brief-copy founder-copy">
+      <h2>Built by a systems-minded problem solver.</h2>
+
+      <p>
+        Signal Ridge Systems was founded by William Zade, a technologist, veteran,
+        and systems-minded problem solver focused on reducing operational friction.
+      </p>
+
+      <p>
+        William has spent years working in IT, systems administration, troubleshooting,
+        and user support, helping people deal not just with technical failures,
+        but with the confusion and instability that often surround them.
+      </p>
+
+      <p>
+        His approach is straightforward: figure out what is actually happening,
+        explain it clearly, document what matters, and leave the environment
+        more stable and more understandable than it was before.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     Closing CTA
+     ===================== -->
+<section class="cta-section">
+  <div class="container cta-layout">
+
+    <p class="section-label">Next step</p>
+
+    <h2>If something feels off in your systems, you’re probably right.</h2>
+
+    <p>
+      Let’s take a look, find the friction, and make the system easier to understand,
+      support, and use.
     </p>
 
     <div class="actions">
       <a class="btn primary" href="{{ url_for('contact') }}">Talk to Signal Ridge Systems</a>
       <a class="btn secondary" href="{{ url_for('services') }}">View services</a>
     </div>
+
   </div>
 </section>
 
