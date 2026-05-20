@@ -5,6 +5,9 @@
 
 <!-- =====================
      Services Hero
+     Primary services page intro.
+     Frames the work around practical system stabilization,
+     workflow clarity, and real-world technical friction.
      ===================== -->
 <section class="page-hero">
   <div class="container page-hero-layout">
@@ -29,8 +32,10 @@
 
 <!-- =====================
      Positioning
+     Short overview of what Signal Ridge actually helps with.
+     Uses staggered rows for subtle scroll animation.
      ===================== -->
-<section class="brief-section">
+<section class="brief-section reveal">
   <div class="container brief-layout">
 
     <div class="section-label">What we actually help with</div>
@@ -43,7 +48,7 @@
         improve clarity, and move forward with confidence.
       </p>
 
-      <div class="divider-list compact">
+      <div class="divider-list compact stagger-list">
         <div>Small business support</div>
         <div>Local government and partner-ready work</div>
         <div>Documentation-first problem solving</div>
@@ -58,8 +63,11 @@
 
 <!-- =====================
      Service Lane 01
+     System Support & Stabilization.
+     Numbered lane structure replaces cards and keeps the page feeling
+     like a capability brief.
      ===================== -->
-<section class="service-lane">
+<section class="service-lane reveal">
   <div class="container service-lane-layout">
 
     <div class="service-lane-index">
@@ -72,7 +80,8 @@
 
       <div class="service-detail-group">
         <h3>Best fit for</h3>
-        <div class="divider-list">
+
+        <div class="divider-list stagger-list">
           <div>Recurring issues that never seem fully resolved</div>
           <div>Technology environments nobody can clearly explain</div>
           <div>Support gaps between users, vendors, and existing IT</div>
@@ -82,7 +91,8 @@
 
       <div class="service-detail-group">
         <h3>What this can include</h3>
-        <div class="divider-list">
+
+        <div class="divider-list stagger-list">
           <div>Troubleshooting and issue isolation</div>
           <div>Support triage and practical next steps</div>
           <div>Environment review and gap identification</div>
@@ -94,9 +104,11 @@
       <div class="service-engagement">
         <div>
           <h3>How engagements start</h3>
+
           <p>
             Usually with a conversation, a problem review, and a clearly scoped next step.
           </p>
+
           <p class="price-line">
             Scope-based or hourly, depending on how much investigation is needed before pricing is finalized.
           </p>
@@ -112,8 +124,10 @@
 
 <!-- =====================
      Service Lane 02
+     Documentation & Workflow Improvement.
+     Dark section alternates visual rhythm without using cards.
      ===================== -->
-<section class="service-lane section-dark">
+<section class="service-lane section-dark reveal">
   <div class="container service-lane-layout">
 
     <div class="service-lane-index">
@@ -126,7 +140,8 @@
 
       <div class="service-detail-group">
         <h3>Best fit for</h3>
-        <div class="divider-list">
+
+        <div class="divider-list stagger-list">
           <div>Workflows that slow people down</div>
           <div>Processes that depend too much on one person’s memory</div>
           <div>Missing documentation or unclear ownership</div>
@@ -136,7 +151,8 @@
 
       <div class="service-detail-group">
         <h3>What this can include</h3>
-        <div class="divider-list">
+
+        <div class="divider-list stagger-list">
           <div>System and process documentation</div>
           <div>Workflow mapping and friction review</div>
           <div>Basic SOP development</div>
@@ -147,7 +163,8 @@
 
       <div class="service-detail-group">
         <h3>Good outcomes</h3>
-        <div class="divider-list compact">
+
+        <div class="divider-list compact stagger-list">
           <div>Less confusion</div>
           <div>Faster onboarding and handoff</div>
           <div>Fewer repeated questions</div>
@@ -158,6 +175,7 @@
       <div class="service-engagement">
         <div>
           <h3>Pricing model</h3>
+
           <p class="price-line">
             Project-based pricing with defined scope, clear deliverables, and practical outcomes.
           </p>
@@ -173,8 +191,10 @@
 
 <!-- =====================
      Service Lane 03
+     Training & Guided Support.
+     Keeps training framed as practical workforce and partner support.
      ===================== -->
-<section class="service-lane">
+<section class="service-lane reveal">
   <div class="container service-lane-layout">
 
     <div class="service-lane-index">
@@ -187,7 +207,8 @@
 
       <div class="service-detail-group">
         <h3>Best fit for</h3>
-        <div class="divider-list">
+
+        <div class="divider-list stagger-list">
           <div>Adult learners with low or uneven digital confidence</div>
           <div>Workforce and partner programs</div>
           <div>Targeted help with accounts, files, forms, and digital safety</div>
@@ -197,7 +218,8 @@
 
       <div class="service-detail-group">
         <h3>What this can include</h3>
-        <div class="divider-list">
+
+        <div class="divider-list stagger-list">
           <div>One-on-one guided support sessions</div>
           <div>Small-group instruction</div>
           <div>Workshops for beginner computer use</div>
@@ -208,7 +230,8 @@
 
       <div class="service-detail-group">
         <h3>Available formats</h3>
-        <div class="divider-list compact">
+
+        <div class="divider-list compact stagger-list">
           <div>One-on-one appointment support</div>
           <div>Single-session workshops</div>
           <div>Multi-day guided programs</div>
@@ -219,6 +242,7 @@
       <div class="service-engagement">
         <div>
           <h3>Pricing model</h3>
+
           <p class="price-line">
             Flat-rate or scoped pricing. W-9 and vendor setup available for institutional and partner work.
           </p>
@@ -234,8 +258,10 @@
 
 <!-- =====================
      Not Sure CTA
+     Final conversion point for visitors who do not know
+     which service lane their issue belongs in.
      ===================== -->
-<section class="cta-section">
+<section class="cta-section reveal">
   <div class="container cta-layout">
 
     <p class="section-label">Not sure where your issue fits?</p>
@@ -248,7 +274,11 @@
 
     <div class="actions">
       <a class="btn primary" href="{{ url_for('contact') }}">Contact Signal Ridge Systems</a>
-      {# Uncomment if the resources route is active again.
+
+      {#
+      Resources route placeholder.
+      Uncomment when the resources route is live.
+
       <a class="btn secondary" href="{{ url_for('links') }}">View resources</a>
       #}
     </div>

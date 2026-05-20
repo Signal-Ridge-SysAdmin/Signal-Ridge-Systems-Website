@@ -5,6 +5,9 @@
 
 <!-- =====================
      Contact Hero
+     Primary page intro.
+     Keep this clear and low-friction: the user does not need
+     to know the technical root cause before reaching out.
      ===================== -->
 <section class="page-hero">
   <div class="container page-hero-layout">
@@ -29,8 +32,10 @@
 
 <!-- =====================
      Contact Guidance
+     Helps visitors recognize whether their issue is a good fit.
+     Uses reveal + stagger-list for controlled scroll animation.
      ===================== -->
-<section class="brief-section">
+<section class="brief-section reveal">
   <div class="container brief-layout">
 
     <div class="section-label">When to reach out</div>
@@ -43,7 +48,7 @@
         who need practical help with technology, workflow, documentation, or system stability.
       </p>
 
-      <div class="divider-list">
+      <div class="divider-list stagger-list">
         <div>You are dealing with recurring technical problems</div>
         <div>Your workflow feels confusing or inefficient</div>
         <div>No one is fully sure how a system is set up</div>
@@ -58,8 +63,9 @@
 
 <!-- =====================
      Helpful Details
+     Tells people what information helps without making the form intimidating.
      ===================== -->
-<section class="brief-section section-dark">
+<section class="brief-section section-dark reveal">
   <div class="container brief-layout">
 
     <div class="section-label">What to include</div>
@@ -72,7 +78,7 @@
         A clear description of the situation is more useful than guessing at the fix.
       </p>
 
-      <div class="divider-list">
+      <div class="divider-list stagger-list">
         <div>What is happening now</div>
         <div>What you expected to happen instead</div>
         <div>Who is affected</div>
@@ -87,8 +93,9 @@
 
 <!-- =====================
      Direct Contact
+     Label/value structure keeps contact info clean and easy to scan.
      ===================== -->
-<section class="contact-methods-section">
+<section class="contact-methods-section reveal">
   <div class="container">
 
     <div class="section-heading-row">
@@ -144,8 +151,10 @@
 
 <!-- =====================
      Contact Form
+     Simple intake form.
+     The hidden company field is a honeypot for basic spam filtering.
      ===================== -->
-<section class="form-section">
+<section class="form-section reveal">
   <div class="container form-layout">
 
     <div class="form-intro">
@@ -166,6 +175,7 @@
     </div>
 
     <form method="post" class="form contact-form">
+      <!-- Honeypot field. Real users should never see or fill this out. -->
       <input
         type="text"
         name="company"

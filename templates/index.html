@@ -4,7 +4,42 @@
 {% block content %}
 
 <!-- =====================
+     Capability Ticker
+     Slow scrolling text strip that adds motion without overwhelming the page.
+     Duplicate content is intentional for seamless looping.
+     ===================== -->
+<section class="ticker-section" aria-label="Signal Ridge capabilities">
+  <div class="ticker-track">
+
+    <div class="ticker-content">
+      <span>IT Support</span>
+      <span>Workflow Cleanup</span>
+      <span>Documentation</span>
+      <span>Legacy Systems</span>
+      <span>Training</span>
+      <span>Systems Stabilization</span>
+      <span>Web Tools</span>
+      <span>Automation</span>
+    </div>
+
+    <div class="ticker-content" aria-hidden="true">
+      <span>IT Support</span>
+      <span>Workflow Cleanup</span>
+      <span>Documentation</span>
+      <span>Legacy Systems</span>
+      <span>Training</span>
+      <span>Systems Stabilization</span>
+      <span>Web Tools</span>
+      <span>Automation</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================
      Hero / Who We Are
+     Primary above-the-fold identity section.
+     Keep this direct, strong, and uncluttered.
      ===================== -->
 <section class="hero-section">
   <div class="container hero-layout">
@@ -30,6 +65,8 @@
       </div>
     </div>
 
+    <!-- Decorative logo mark.
+         This is intentionally hidden from screen readers. -->
     <div class="hero-mark" aria-hidden="true">
       <img
         src="{{ url_for('static', filename='img/logo.png') }}"
@@ -41,10 +78,13 @@
 </section>
 
 
+
+
 <!-- =====================
      The Real Problem
+     Scroll-reveal section with staggered divider list.
      ===================== -->
-<section class="brief-section">
+<section class="brief-section reveal">
   <div class="container brief-layout">
 
     <div class="section-label">The real problem</div>
@@ -58,7 +98,7 @@
         But if nobody understands the system, the work still slows down.
       </p>
 
-      <div class="divider-list">
+      <div class="divider-list stagger-list">
         <div>Confusing or poorly explained technology environments</div>
         <div>Broken workflows and recurring operational friction</div>
         <div>Undocumented systems and unclear ownership</div>
@@ -71,9 +111,59 @@
 
 
 <!-- =====================
-     What We Do
+     Media / Visual Proof Band
+     Placeholder section for real lab, workstation, server, field support, or short video media.
+     Recommended future assets:
+     - static/img/site/workstation.jpg
+     - static/img/site/network-lab.jpg
+     - static/video/signal-ridge-loop.mp4
      ===================== -->
-<section class="brief-section section-dark">
+<section class="media-band reveal">
+  <div class="container media-band-layout">
+
+    <div class="media-copy">
+      <p class="section-label">Built for real environments</p>
+
+      <h2>Practical systems work, not template advice.</h2>
+
+      <p>
+        Signal Ridge Systems is built around the kind of technology problems that show up
+        in actual operations: undocumented setups, unclear ownership, vendor gaps,
+        fragile workflows, and tools people are expected to use without enough structure.
+      </p>
+    </div>
+
+    <!-- Static visual placeholder.
+         Replace this image path once you have a real photo you like. -->
+    <figure class="media-frame">
+      <img
+        src="{{ url_for('static', filename='img/logo.png') }}"
+        alt="Signal Ridge Systems visual mark"
+      />
+      <figcaption>
+        Systems support, documentation, workflow cleanup, and practical technical problem solving.
+      </figcaption>
+    </figure>
+
+    {#
+    Optional future video version:
+
+    <div class="media-frame media-frame-video">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="{{ url_for('static', filename='video/signal-ridge-loop.mp4') }}" type="video/mp4">
+      </video>
+    </div>
+    #}
+
+  </div>
+</section>
+
+
+<!-- =====================
+     What We Do
+     Core positioning section.
+     ===================== -->
+<section class="brief-section section-dark reveal">
   <div class="container brief-layout">
 
     <div class="section-label">What we do</div>
@@ -100,8 +190,9 @@
 
 <!-- =====================
      Capabilities
+     Numbered, no-card service preview.
      ===================== -->
-<section class="capabilities-section">
+<section class="capabilities-section reveal">
   <div class="container">
 
     <div class="section-heading-row">
@@ -162,9 +253,67 @@
 
 
 <!-- =====================
-     How We Work
+     Systems Trace
+     Interactive-looking process section.
+     Can be enhanced later with hover/scroll JS if desired.
      ===================== -->
-<section class="method-section">
+<section class="trace-section section-dark reveal">
+  <div class="container trace-layout">
+
+    <div class="trace-intro">
+      <p class="section-label">Systems trace</p>
+
+      <h2>Follow the problem until it stops pretending to be random.</h2>
+
+      <p>
+        Recurring technology problems usually have a pattern. The goal is to trace that pattern,
+        identify the actual failure point, and leave behind something easier to support.
+      </p>
+    </div>
+
+    <div class="trace-steps" aria-label="Signal Ridge troubleshooting process">
+
+      <div class="trace-step">
+        <span class="trace-number">01</span>
+        <h3>Symptom</h3>
+        <p>What people are seeing, reporting, avoiding, or working around.</p>
+      </div>
+
+      <div class="trace-step">
+        <span class="trace-number">02</span>
+        <h3>Failure point</h3>
+        <p>Where the process, system, access path, or handoff actually breaks down.</p>
+      </div>
+
+      <div class="trace-step">
+        <span class="trace-number">03</span>
+        <h3>Root cause</h3>
+        <p>The underlying structure that keeps recreating the same problem.</p>
+      </div>
+
+      <div class="trace-step">
+        <span class="trace-number">04</span>
+        <h3>Fix</h3>
+        <p>The practical correction that stabilizes the system without creating more confusion.</p>
+      </div>
+
+      <div class="trace-step">
+        <span class="trace-number">05</span>
+        <h3>Documentation</h3>
+        <p>The notes, ownership, and next steps that keep the fix from disappearing.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     How We Work
+     Short operational method statement.
+     ===================== -->
+<section class="method-section reveal">
   <div class="container">
 
     <div class="section-heading-row">
@@ -185,9 +334,49 @@
 
 
 <!-- =====================
-     About the Founder
+     Web Developer Proof
+     Subtle capability section showing that the site itself is part of the portfolio.
      ===================== -->
-<section class="brief-section">
+<section class="dev-proof-section reveal">
+  <div class="container dev-proof-layout">
+
+    <div class="dev-proof-copy">
+      <p class="section-label">Web systems</p>
+
+      <h2>Designed, built, and maintained with the same philosophy.</h2>
+
+      <p>
+        This site is part of the Signal Ridge approach: clear structure, maintainable templates,
+        practical routing, readable styling, and forms that support real conversations.
+      </p>
+    </div>
+
+    <div class="dev-proof-list">
+      <div>
+        <span>Stack</span>
+        <strong>Flask templates, static assets, structured CSS, and simple routing.</strong>
+      </div>
+
+      <div>
+        <span>Design</span>
+        <strong>Responsive layout, accessible content flow, motion-aware animation, and clear calls to action.</strong>
+      </div>
+
+      <div>
+        <span>Purpose</span>
+        <strong>Not just a brochure — a working business system that can grow with the company.</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     About the Founder
+     Human credibility section.
+     ===================== -->
+<section class="brief-section reveal">
   <div class="container brief-layout">
 
     <div class="section-label">Founder</div>
@@ -219,8 +408,9 @@
 
 <!-- =====================
      Closing CTA
+     Final conversion point.
      ===================== -->
-<section class="cta-section">
+<section class="cta-section reveal">
   <div class="container cta-layout">
 
     <p class="section-label">Next step</p>
