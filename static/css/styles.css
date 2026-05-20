@@ -1490,6 +1490,26 @@ select:focus-visible {
   text-align: right;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.45rem;
+}
+
+.footer-links a {
+  color: var(--accent-strong);
+  font-size: 0.92rem;
+  font-weight: 760;
+  text-decoration-color: rgba(240, 122, 36, 0.55);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.footer-links a:hover {
+  color: var(--text-strong);
+}
+
 @media (max-width: 820px) {
   .footer-inner {
     grid-template-columns: 1fr;

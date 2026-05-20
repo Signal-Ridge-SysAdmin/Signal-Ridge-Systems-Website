@@ -27,7 +27,7 @@
        ===================== -->
   <link
     rel="stylesheet"
-    href="{{ url_for('static', filename='css/styles.css') }}?v=20260519-2"
+    href="{{ url_for('static', filename='css/styles.css') }}?v=20260520-1"
   />
 
   <!-- =====================
@@ -45,7 +45,7 @@
        Open Graph / Social Preview
        Used by LinkedIn, Facebook, Discord, etc.
        ===================== -->
-  {% set og_version = "20260519-2" %}
+  {% set og_version = "20260520-1" %}
   {% set og_image = url_for('static', filename='img/og/open_graph_image.jpg', _external=True) ~ "?v=" ~ og_version %}
 
   <meta property="og:site_name" content="Signal Ridge Systems LLC" />
@@ -120,6 +120,15 @@
           Contact
         </a>
 
+        <a
+          class="nav-link"
+          href="https://signal-ridge-systems-llc-shop.fourthwall.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Merch
+        </a>
+
         {#
         Resources route placeholder.
         Re-enable when the links/resources page is live.
@@ -156,38 +165,40 @@
     </div>
   </header>
 
+
   <!-- =====================
-     Capability Ticker
-     Slow scrolling text strip that adds motion without overwhelming the page.
-     Duplicate content is intentional for seamless looping.
-     ===================== -->
-<section class="ticker-section" aria-label="Signal Ridge capabilities">
-  <div class="ticker-track">
+       Persistent Capability Ticker
+       Site-wide motion strip placed directly under the header.
+       Duplicate content is intentional for seamless looping.
+       ===================== -->
+  <section class="ticker-section" aria-label="Signal Ridge capabilities">
+    <div class="ticker-track">
 
-    <div class="ticker-content">
-      <span>IT Support</span>
-      <span>Workflow Cleanup</span>
-      <span>Documentation</span>
-      <span>Legacy Systems</span>
-      <span>Training</span>
-      <span>Systems Stabilization</span>
-      <span>Web Tools</span>
-      <span>Automation</span>
+      <div class="ticker-content">
+        <span>IT Support</span>
+        <span>Workflow Cleanup</span>
+        <span>Documentation</span>
+        <span>Legacy Systems</span>
+        <span>Training</span>
+        <span>Systems Stabilization</span>
+        <span>Web Tools</span>
+        <span>Automation</span>
+      </div>
+
+      <div class="ticker-content" aria-hidden="true">
+        <span>IT Support</span>
+        <span>Workflow Cleanup</span>
+        <span>Documentation</span>
+        <span>Legacy Systems</span>
+        <span>Training</span>
+        <span>Systems Stabilization</span>
+        <span>Web Tools</span>
+        <span>Automation</span>
+      </div>
+
     </div>
+  </section>
 
-    <div class="ticker-content" aria-hidden="true">
-      <span>IT Support</span>
-      <span>Workflow Cleanup</span>
-      <span>Documentation</span>
-      <span>Legacy Systems</span>
-      <span>Training</span>
-      <span>Systems Stabilization</span>
-      <span>Web Tools</span>
-      <span>Automation</span>
-    </div>
-
-  </div>
-</section>
 
   <!-- =====================
        Main Content
@@ -233,6 +244,16 @@
         <div class="footer-meta">
           Practical IT support, documentation, workflow improvement, and system stabilization.
         </div>
+
+        <div class="footer-links">
+          <a
+            href="https://signal-ridge-systems-llc-shop.fourthwall.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Signal Ridge merch
+          </a>
+        </div>
       </div>
 
       <div class="footer-block footer-block-right">
@@ -248,7 +269,7 @@
        Handles scroll-reveal animations and other progressive enhancements.
        Loaded at the end so the page content exists before scripts run.
        ===================== -->
-  <script src="{{ url_for('static', filename='js/main.js') }}?v=20260519-2"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}?v=20260520-1"></script>
 
 </body>
 </html>
