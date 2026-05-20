@@ -525,10 +525,11 @@ select:focus-visible {
 
 /* =========================
    Capability Ticker
-   Slow homepage ticker that adds motion without overwhelming the layout.
+   Persistent Site-Wide ticker that adds motion without overwhelming the layout.
    ========================= */
 
 .ticker-section {
+  min-height: 44px;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.018);
