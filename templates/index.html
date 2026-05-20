@@ -76,11 +76,16 @@
   </div>
 </section>
 
-
 <!-- =====================
      Media / Visual Proof Band
-     Placeholder section for real lab, workstation, server, field support, or short video media.
-     Recommended future assets:
+     Atmospheric visual section for technical credibility.
+     This is intentionally placed below the hero so the homepage stays clear,
+     while the media band carries the cinematic systems-operator energy.
+
+     Current asset:
+     - static/img/site/signal-city.jpg
+
+     Future possible assets:
      - static/img/site/workstation.jpg
      - static/img/site/network-lab.jpg
      - static/video/signal-ridge-loop.mp4
@@ -100,12 +105,12 @@
       </p>
     </div>
 
-    <!-- Static visual placeholder.
-         Replace this image path once you have a real photo you like. -->
-    <figure class="media-frame">
+    <!-- Cinematic visual panel.
+         This image supports the "systems operator" feel without taking over the hero. -->
+    <figure class="media-frame media-frame-image">
       <img
-        src="{{ url_for('static', filename='img/logo.png') }}"
-        alt="Signal Ridge Systems visual mark"
+        src="{{ url_for('static', filename='img/site/signal-city.jpg') }}"
+        alt="Dark city skyline with a technical interface overlay"
       />
       <figcaption>
         Systems support, documentation, workflow cleanup, and practical technical problem solving.
