@@ -685,10 +685,11 @@ select:focus-visible {
     max-width: 100%;
   }
 }
-
 /* =========================
    Media Band
-   Homepage visual proof section for images or future video.
+   Homepage visual proof section for atmospheric images or future video.
+   Designed to support a cinematic systems-operator image without overpowering
+   the surrounding practical business copy.
    ========================= */
 
 .media-band {
@@ -715,6 +716,11 @@ select:focus-visible {
   font-size: 1.04rem;
 }
 
+/* =====================
+   Shared Media Frame
+   Base frame used by both image and video versions.
+   ===================== */
+
 .media-frame {
   position: relative;
   margin: 0;
@@ -728,18 +734,22 @@ select:focus-visible {
     linear-gradient(135deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
 }
 
+/* Inner orange technical frame */
 .media-frame::before {
   content: "";
   position: absolute;
   inset: 1rem;
+  z-index: 2;
   border: 1px solid rgba(240, 122, 36, 0.18);
   pointer-events: none;
 }
 
+/* Grid/overlay treatment */
 .media-frame::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   background:
     linear-gradient(rgba(238, 242, 246, 0.028) 1px, transparent 1px),
@@ -748,6 +758,7 @@ select:focus-visible {
   opacity: 0.75;
 }
 
+/* Default image behavior for placeholder/logo media */
 .media-frame img {
   width: min(300px, 65%);
   opacity: 0.32;
@@ -756,17 +767,54 @@ select:focus-visible {
     drop-shadow(0 0 32px rgba(240, 122, 36, 0.12));
 }
 
+/* Caption sits above image overlays */
 .media-frame figcaption {
   position: absolute;
   left: 1.4rem;
   right: 1.4rem;
   bottom: 1.2rem;
-  z-index: 2;
+  z-index: 3;
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 650;
   line-height: 1.35;
 }
+
+/* =====================
+   Full Image Media Frame
+   Use with:
+   <figure class="media-frame media-frame-image">
+   ===================== */
+
+.media-frame-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  opacity: 0.62;
+  filter:
+    saturate(0.85)
+    contrast(1.08)
+    brightness(0.72);
+}
+
+/* Dark readability overlay + subtle grid */
+.media-frame-image::after {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(9, 12, 16, 0.72), rgba(9, 12, 16, 0.14)),
+    linear-gradient(rgba(238, 242, 246, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 242, 246, 0.025) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+  opacity: 1;
+}
+
+/* =====================
+   Video Media Frame
+   Future optional version for short muted loops.
+   ===================== */
 
 .media-frame-video video {
   position: absolute;
@@ -775,7 +823,15 @@ select:focus-visible {
   height: 100%;
   object-fit: cover;
   opacity: 0.42;
+  filter:
+    saturate(0.85)
+    contrast(1.08)
+    brightness(0.72);
 }
+
+/* =====================
+   Responsive Media Band
+   ===================== */
 
 @media (max-width: 860px) {
   .media-band-layout {
