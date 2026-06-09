@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,11 +161,21 @@
         >
           Facebook
         </a>
+
+        <!-- Business credential badge.
+             Placed directly after social links so it appears to the right of LinkedIn/Facebook. -->
+        <div class="site-credentials" aria-label="Business credentials">
+          <img
+            class="site-credential-logo"
+            src="{{ url_for('static', filename='img/sdvosb-logo.png') }}"
+            alt="Service-Disabled Veteran-Owned Small Business"
+          />
+          <span>Service-Disabled Veteran-Owned Small Business</span>
+        </div>
       </nav>
 
     </div>
   </header>
-
 
   <!-- =====================
        Persistent Capability Ticker
@@ -273,3 +284,4 @@
 
 </body>
 </html>
+```

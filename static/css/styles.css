@@ -272,6 +272,7 @@ p {
   line-height: 1.25;
 }
 
+```css
 /* =========================
    Nav / Buttons
    ========================= */
@@ -337,6 +338,39 @@ p {
   background: var(--accent);
 }
 
+/* Header SDVOSB credential badge */
+.site-credentials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 42px;
+  margin-left: 0.35rem;
+  padding: 0.35rem 0.55rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 780;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.site-credential-logo {
+  display: block;
+  width: 34px;
+  height: 34px;
+  max-width: 34px;
+  max-height: 34px;
+  object-fit: contain;
+  flex: 0 0 34px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -387,7 +421,7 @@ select:focus-visible {
   outline: 3px solid rgba(240, 122, 36, 0.36);
   outline-offset: 3px;
 }
-
+```css
 @media (max-width: 880px) {
   .header-inner {
     align-items: flex-start;
@@ -396,6 +430,25 @@ select:focus-visible {
 
   .nav {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-credentials span {
+    display: none;
+  }
+
+  .site-credentials {
+    margin-left: 0;
+    padding-inline: 0.35rem;
+  }
+
+  .site-credential-logo {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    flex-basis: 30px;
   }
 }
 
@@ -477,6 +530,23 @@ select:focus-visible {
   margin-bottom: 1rem;
 }
 
+.hero-credentials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hero-credential-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .hero-mark {
   position: relative;
   display: grid;
@@ -512,6 +582,16 @@ select:focus-visible {
 @media (max-width: 900px) {
   .hero-layout {
     grid-template-columns: 1fr;
+  }
+
+  .hero-credentials {
+    align-items: flex-start;
+    font-size: 0.85rem;
+  }
+
+  .hero-credential-logo {
+    width: 38px;
+    height: 38px;
   }
 
   .hero-mark {
