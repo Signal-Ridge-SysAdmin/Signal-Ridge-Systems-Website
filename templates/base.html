@@ -161,19 +161,44 @@
           Facebook
         </a>
 
-        <!-- Business credential badge.
-             Placed directly after social links so it appears to the right of LinkedIn/Facebook. -->
-        <div class="site-credentials" aria-label="Business credentials">
-          <img
-            class="site-credential-logo"
-            src="{{ url_for('static', filename='img/sdvosb-logo.png') }}"
-            alt="Service-Disabled Veteran-Owned Small Business"
-          />
-          <span>Service-Disabled Veteran-Owned Small Business</span>
-        </div>
-      </nav>
+       <!-- Government contracting credentials.
+     Displayed prominently for government agencies and procurement officers. -->
+<div class="site-credentials" aria-label="Government contracting information">
+
+  <img
+    class="site-credential-logo"
+    src="{{ url_for('static', filename='img/sdvosb-logo.png') }}"
+    alt="Service-Disabled Veteran-Owned Small Business"
+  />
+
+  <div class="site-credential-text">
+
+    <div class="site-credential-title">
+      Service-Disabled Veteran-Owned Small Business
+    </div>
+
+    <div class="site-credential-meta">
+      <span>SAM.gov Registered</span>
+
+      <span class="credential-divider">|</span>
+
+      <span>
+        UEI:
+        <strong>{{ config['UEI_NUMBER'] if config.get('UEI_NUMBER') else 'XXXXXXXXXXXX' }}</strong>
+      </span>
+
+      <span class="credential-divider">|</span>
+
+      <span>
+        CAGE:
+        <strong>{{ config['CAGE_CODE'] if config.get('CAGE_CODE') else 'XXXXX' }}</strong>
+      </span>
 
     </div>
+
+  </div>
+
+</div>
   </header>
 
   <!-- =====================

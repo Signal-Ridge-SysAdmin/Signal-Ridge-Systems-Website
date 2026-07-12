@@ -9,6 +9,9 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 
+app.config["UEI_NUMBER"] = "UD3DHT949ED6"
+app.config["CAGE_NUMBER"] = "1TRJ5"
+
 # Needed for flash() messages. Set FLASK_SECRET_KEY in your environment for production.
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "dev-change-me")
 
